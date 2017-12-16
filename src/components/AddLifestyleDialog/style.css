@@ -1,0 +1,98 @@
+h1 {
+  font-family: 'Roboto';
+  font-size: 4.5em;
+  font-weight: medium; }
+
+h2 {
+  font-family: 'Roboto-medium';
+  font-weight: bold !important;
+  font-size: 3em; }
+
+h3 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 2em; }
+
+h4 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 2em; }
+
+h5.bold {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 1rem; }
+
+h5.medium {
+  font-family: 'Roboto';
+  font-weight: medium;
+  font-size: 1rem; }
+
+h5.body {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 1rem; }
+
+h5.light {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  font-size: 1rem; }
+
+h6 {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  font-size: 1.25em; }
+
+button {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 1.5em; }
+
+body {
+  margin: 0; }
+
+.center-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; }
+
+.center-content {
+  display: table-cell;
+  vertical-align: middle; }
+
+.lifestyle-dialog {
+  background-color: white !important;
+  color: #8F8F8F !important;
+  box-shadow: 0px 2px 10px rgba(143, 143, 143, 0.5) !important;
+  -webkit-box-shadow: 0px 2px 10px rgba(143, 143, 143, 0.5) !important;
+  font-family: 'roboto' !important;
+  font-weight: 100 !important;
+  font-size: 0.7em;
+  height: 110px;
+  text-align: right;
+  width: 90%;
+  letter-spacing: 0.5px; }
+  .lifestyle-dialog form {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    padding-top: 20px; }
+
+.addlifestyle-textarea {
+  font-family: 'roboto';
+  font-weight: 100 !important;
+  border: none !important;
+  font-size: 1.1em !important;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 45px;
+  resize: none !important;
+  padding: 0 !important; }
+
+.addlifestyle-btn {
+  margin-right: 30px !important;
+  height: 35px;
+  width: 90px;
+  background: #26BCB9 !important;
+  color: white !important;
+  font-family: 'roboto';
+  font-weight: 100 !important; }

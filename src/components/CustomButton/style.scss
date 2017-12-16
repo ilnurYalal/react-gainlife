@@ -1,0 +1,87 @@
+@import "public/colors";
+
+.btn-get-started {
+  background-color: map_get($colors, address-bar) !important;
+  color: white !important;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.5) !important;
+  -webkit-box-shadow: 0px 2px 10px rgba(0,0,0,0.5) !important;
+}
+
+.modal-button {
+  font-size: 2em !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  padding-left: 70px !important;
+  padding-right: 70px !important;
+  margin-top: 30px !important;
+  font-family: roboto bold !important;
+}
+
+.btn-get-started:hover {
+  background-color: map_get($colors, address-bar);
+}
+.lifestyle-button {
+  background-color: white !important;
+  color: map_get($colors, dark-gray) !important;
+  box-shadow: 0px 2px 10px rgba(map_get($colors, dark-gray),0.5) !important;
+  -webkit-box-shadow: 0px 2px 10px rgba(map_get($colors, dark-gray),0.5) !important;
+  font-family: 'roboto' !important;
+  font-weight: 100 !important;
+  font-size: 0.7em;
+  height: 80px;
+  text-align: left !important;
+  width: 90%;
+  letter-spacing: 0.5px;
+}
+
+.lifestyle-incomplete-row-button {
+  width: 100% !important;
+  border-radius: 0 !important;
+  border-color: map_get($colors, light-gray) !important;
+  border-width: 1px !important;
+  background: map_get($colors, side-navigation-bar) !important;
+  border-style: solid !important;
+  min-height: 96px !important;
+  display: flex !important;
+  .check-icon {
+    width: 50px;
+  }
+}
+
+.lifestyle-complete-row-button {
+  width: 100% !important;
+  border-radius: 0 !important;
+  border-color: map_get($colors, light-gray) !important;
+  border-width: 1px !important;
+  background: white !important;
+  border-style: solid !important;
+  min-height: 96px !important;
+  display: flex !important;
+  position: relative;
+  .check-icon {
+    width: 50px;
+  }
+  .complete-date {
+    font-weight: 100;
+    position: absolute;
+    right: 10px;
+    top: 0.785714em;
+    color: gray;
+    font-size: 0.9em;
+  }
+}
+
+.incomplete-row-info {
+  margin-left: 25px;
+  font-family: 'roboto-bold';
+  font-size: 1.2em;
+  color: black;
+  line-height: 1.1em;
+  text-align: left;
+  .incomplete-row-description {
+    margin-top: 7px;
+    font-family: roboto;
+    font-weight: 100;
+    color: #5e5e5e;
+  }
+}

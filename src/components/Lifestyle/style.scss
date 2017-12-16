@@ -1,0 +1,83 @@
+@import "public/colors";
+.lifestyle-container {
+  flex: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 40px;
+  font-size: 1.5em;
+  font-family: 'Roboto';
+  font-weight: bold;
+  height: calc(100% - 205px);
+  display: flex;
+  flex-direction: column;
+  .title {
+    font-size: 1.6em;
+    font-family: roboto;
+    line-height: 40px;
+  }
+}
+
+.lifestyle-content {
+  display: flex;
+  margin-top: 40px;
+  flex: 1; //height: calc(100% - 200px);
+  //background-color: gray;
+  .lifestyle-incomplete-container {
+    width: 50%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lifestyle-complete-container {
+    width: 50%;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    .complete-container {
+      font-size: 1.3em;
+      font-family: 'roboto';
+      font-weight: bold;
+      color: map_get($colors, dark-color);
+      border-bottom: 1.5px;
+      border-bottom-color: map_get($colors, light-gray);
+      border-bottom-style: solid;
+      width: 90%;
+      padding-bottom: 15px;
+      text-align: left;
+    }
+  }
+}
+.incomplete-container {
+  font-size: 1.3em;
+  margin-top: 40px;
+  font-family: 'roboto';
+  font-weight: bold;
+  color: map_get($colors, dark-color);
+  border-bottom: 1.5px;
+  border-bottom-color: map_get($colors, light-gray);
+  border-bottom-style: solid;
+  width: 90%;
+  padding-bottom: 15px;
+}
+.no-content-image {
+  display: inline-block !important;
+  width: 120px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.no-content-description {
+  display: inline-block;
+  width: 300px;
+  margin-top: 0;
+  color: map_get($colors, dark-gray);
+}
+.lifestyle-incomplete-row {
+  margin-top: 25px;
+  width: 90% !important;
+  flex: 1;
+  overflow: scroll;
+  overflow-x: auto;
+  overflow-y: auto;
+}

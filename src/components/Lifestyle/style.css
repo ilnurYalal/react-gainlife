@@ -1,0 +1,136 @@
+h1 {
+  font-family: 'Roboto';
+  font-size: 4.5em;
+  font-weight: medium; }
+
+h2 {
+  font-family: 'Roboto-medium';
+  font-weight: bold !important;
+  font-size: 3em; }
+
+h3 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 2em; }
+
+h4 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 2em; }
+
+h5.bold {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 1rem; }
+
+h5.medium {
+  font-family: 'Roboto';
+  font-weight: medium;
+  font-size: 1rem; }
+
+h5.body {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 1rem; }
+
+h5.light {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  font-size: 1rem; }
+
+h6 {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  font-size: 1.25em; }
+
+button {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 1.5em; }
+
+body {
+  margin: 0; }
+
+.center-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; }
+
+.center-content {
+  display: table-cell;
+  vertical-align: middle; }
+
+.lifestyle-container {
+  flex: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 40px;
+  font-size: 1.5em;
+  font-family: 'Roboto';
+  font-weight: bold;
+  height: calc(100% - 205px);
+  display: flex;
+  flex-direction: column; }
+  .lifestyle-container .title {
+    font-size: 1.6em;
+    font-family: roboto;
+    line-height: 40px; }
+
+.lifestyle-content {
+  display: flex;
+  margin-top: 40px;
+  flex: 1; }
+  .lifestyle-content .lifestyle-incomplete-container {
+    width: 50%;
+    text-align: left;
+    display: flex;
+    flex-direction: column; }
+  .lifestyle-content .lifestyle-complete-container {
+    width: 50%;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column; }
+    .lifestyle-content .lifestyle-complete-container .complete-container {
+      font-size: 1.3em;
+      font-family: 'roboto';
+      font-weight: bold;
+      color: #0c2526;
+      border-bottom: 1.5px;
+      border-bottom-color: #D8D8D8;
+      border-bottom-style: solid;
+      width: 90%;
+      padding-bottom: 15px;
+      text-align: left; }
+
+.incomplete-container {
+  font-size: 1.3em;
+  margin-top: 40px;
+  font-family: 'roboto';
+  font-weight: bold;
+  color: #0c2526;
+  border-bottom: 1.5px;
+  border-bottom-color: #D8D8D8;
+  border-bottom-style: solid;
+  width: 90%;
+  padding-bottom: 15px; }
+
+.no-content-image {
+  display: inline-block !important;
+  width: 120px;
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.no-content-description {
+  display: inline-block;
+  width: 300px;
+  margin-top: 0;
+  color: #8F8F8F; }
+
+.lifestyle-incomplete-row {
+  margin-top: 25px;
+  width: 90% !important;
+  flex: 1;
+  overflow: scroll;
+  overflow-x: auto;
+  overflow-y: auto; }

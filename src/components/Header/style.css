@@ -1,0 +1,109 @@
+h1 {
+  font-family: 'Roboto';
+  font-size: 4.5em;
+  font-weight: medium; }
+
+h2 {
+  font-family: 'Roboto-medium';
+  font-weight: bold !important;
+  font-size: 3em; }
+
+h3 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 2em; }
+
+h4 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 2em; }
+
+h5.bold {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 1rem; }
+
+h5.medium {
+  font-family: 'Roboto';
+  font-weight: medium;
+  font-size: 1rem; }
+
+h5.body {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 1rem; }
+
+h5.light {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  font-size: 1rem; }
+
+h6 {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  font-size: 1.25em; }
+
+button {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 1.5em; }
+
+body {
+  margin: 0; }
+
+.center-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; }
+
+.center-content {
+  display: table-cell;
+  vertical-align: middle; }
+
+.header {
+  background-color: #26BCB9;
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+  padding-left: 1.5em;
+  padding-right: 1.5em; }
+
+.header-title {
+  text-align: left;
+  margin: 0;
+  color: white;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em; }
+
+.header-help {
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+  align-items: center; }
+  .header-help .help-icon {
+    color: white;
+    margin: 0;
+    height: auto !important;
+    font-size: 2.2em !important; }
+  .header-help .header-notification {
+    margin: 0;
+    position: relative; }
+    .header-help .header-notification .alarm-icon {
+      color: white;
+      margin: 0 !important;
+      height: auto !important; }
+    .header-help .header-notification .alarm-badge {
+      width: 18px;
+      height: 18px;
+      text-align: center;
+      display: block !important;
+      line-height: 18px;
+      font-size: 0.8em;
+      color: white;
+      background: #BC3526;
+      top: -3px;
+      right: -5px;
+      padding: 0;
+      border-radius: 50% !important;
+      position: absolute;
+      font-weight: initial; }

@@ -1,0 +1,56 @@
+@import "public/colors";
+
+.header {
+  background-color: map-get($colors, address-bar);
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.header-title {
+  text-align: left;
+  margin: 0;
+  color: white;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.header-help {
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  .help-icon {
+    color: white;
+    margin: 0;
+    height: auto!important;
+    font-size: 2.2em!important;
+  }
+  .header-notification {
+    margin: 0;
+    position: relative;
+    .alarm-icon {
+      color: white;
+      margin: 0!important;
+      height: auto!important;
+    }
+    .alarm-badge {
+      width: 18px;
+      height: 18px;
+      text-align: center;
+      display: block!important;
+      line-height: 18px;
+      font-size: 0.8em;
+      color: white;
+      background: map_get($colors, notification-badge);
+      top: -3px;
+      right: -5px;
+      padding: 0;
+      border-radius: 50%!important;
+      position: absolute;
+      font-weight: initial;
+    }
+  }
+}
