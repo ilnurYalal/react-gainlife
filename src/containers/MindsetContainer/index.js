@@ -4,17 +4,36 @@ import './style.css';
 import BackgroundImage from './../../assets/images.jpeg';
 import { TAB_ITEMS } from './../../constants';
 import { Lifestyle } from './../../components/Lifestyle';
+import { Mindset } from './../../components/Mindset';
 
-export class Mindset extends Component {
+export class MindsetContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeIndex: 0
+      activeIndex: 1 // 0: lifestyle, 1: mindset, 2: journal
     }
   }
   
   onTabChange = (event, data) => {
     this.setState({ activeIndex: data.activeIndex });
+  };
+  
+  renderTabContent = () => {
+    const { activeIndex } = this.state;
+    switch (activeIndex) {
+      case 0:
+        return (
+          <Lifestyle />
+        );
+      case 1:
+        return (
+          <Mindset />
+        );
+      case 2:
+        break;
+      default:
+        break;
+    }
   };
   
   render() {
@@ -40,7 +59,7 @@ export class Mindset extends Component {
             renderActiveOnly={false}
           />
         </div>
-        <Lifestyle />
+        {this.renderTabContent()}
       </div>
     )
   }
