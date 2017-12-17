@@ -32,7 +32,7 @@ export class AddLifestyleDialog extends Component {
   render() {
     const { isDisabledBtn } = this.state;
     return (
-      <div className="lifestyle-dialog shadow-content">
+      <div className="lifestyle-dialog">
         <Form>
           <TextArea
             placeholder="Add your own Lifestyle Challenge"

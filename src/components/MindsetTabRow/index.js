@@ -12,17 +12,24 @@ export class MindsetTabRow extends Component {
     }
   }
   
+  onClick = () => {
+    const { isShowCheckIcon } = this.state;
+    // if (!isShowCheckIcon) {
+      this.props.onClick ? this.props.onClick() : null;
+    // }
+  };
+  
   render() {
     const { isShowCheckIcon } = this.state;
     return (
-      <div className="mindset-incompleted-row shadow-content">
+      <div className="mindset-incompleted-row">
         <div className="mindest-incompleted-row-title">
           Confidence - Courage
         </div>
         <div className="mindest-incompleted-row-description">
           Introduction to this activity intro copy is here intro copy is here intro copy is here intro copy is here
         </div>
-        <Button onClick={() => alert('click')} className="mindset-incompleted-button">
+        <Button onClick={this.onClick} className="mindset-incompleted-button">
           <div className="mindset-incompleted-row-background">
             <Image src={MindsetActivityIcon} className="mindset-incompleted-row-icon"/>
           </div>

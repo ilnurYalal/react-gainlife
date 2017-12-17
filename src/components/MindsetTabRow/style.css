@@ -60,10 +60,6 @@ body {
   display: table-cell;
   vertical-align: middle; }
 
-.shadow-content {
-  box-shadow: 0px 2px 10px rgba(143, 143, 143, 0.5) !important;
-  -webkit-box-shadow: 0px 2px 10px rgba(143, 143, 143, 0.5) !important; }
-
 .mindset-incompleted-row {
   height: 200px;
   margin-bottom: 30px;
@@ -73,7 +69,9 @@ body {
   display: inline-block;
   border-radius: 3px;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5) !important;
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5) !important; }
   .mindset-incompleted-row .mindest-incompleted-row-title {
     font-size: 1.5em;
     font-family: roboto;
