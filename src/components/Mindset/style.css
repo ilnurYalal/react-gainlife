@@ -1,0 +1,128 @@
+h1 {
+  font-family: 'Roboto';
+  font-size: 4.5em;
+  font-weight: medium; }
+
+h2 {
+  font-family: 'Roboto-medium';
+  font-weight: bold !important;
+  font-size: 3em; }
+
+h3 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 2em; }
+
+h4 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 2em; }
+
+h5.bold {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 1rem; }
+
+h5.medium {
+  font-family: 'Roboto';
+  font-weight: medium;
+  font-size: 1rem; }
+
+h5.body {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 1rem; }
+
+h5.light {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  font-size: 1rem; }
+
+h6 {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  font-size: 1.25em; }
+
+button {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 1.5em; }
+
+body {
+  margin: 0; }
+
+.center-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; }
+
+.center-content {
+  display: table-cell;
+  vertical-align: middle; }
+
+.shadow-content {
+  box-shadow: 0px 2px 10px rgba(143, 143, 143, 0.5) !important;
+  -webkit-box-shadow: 0px 2px 10px rgba(143, 143, 143, 0.5) !important; }
+
+.mindset-tab {
+  flex: 1;
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 20px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  height: calc(100% - 205px);
+  display: flex;
+  flex-direction: column; }
+  .mindset-tab .mindset-tab-scroll {
+    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: auto; }
+  .mindset-tab .mindset-tab-header {
+    font-size: 2.5em;
+    font-family: roboto;
+    line-height: 40px; }
+  .mindset-tab .mindset-tab-incompleted-content {
+    margin-top: 20px;
+    flex: 1; }
+    .mindset-tab .mindset-tab-incompleted-content .mindset-incomplete-title {
+      font-size: 1.6em;
+      text-align: left;
+      font-weight: bold;
+      border-bottom-color: #D8D8D8;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      padding-bottom: 15px;
+      color: #0c2526; }
+  .mindset-tab .mindset-incomplete-main-content {
+    margin-top: 30px;
+    width: 100%;
+    text-align: left; }
+    .mindset-tab .mindset-incomplete-main-content .mindset-incomplete-description {
+      height: 200px;
+      margin-bottom: 30px;
+      width: 47%;
+      margin-right: 3%;
+      display: inline-block;
+      border-radius: 3px;
+      position: relative;
+      overflow: hidden; }
+      .mindset-tab .mindset-incomplete-main-content .mindset-incomplete-description .mindset-incomplete-descr-header {
+        font-size: 1.6em;
+        font-family: roboto;
+        font-weight: bold;
+        color: #777777; }
+        .mindset-tab .mindset-incomplete-main-content .mindset-incomplete-description .mindset-incomplete-descr-header.mindset-incomplete-descr-body {
+          margin-top: 40px;
+          font-size: 1.2em;
+          font-weight: 100;
+          line-height: 1.3em; }
+
+.mindset-tab-header-description {
+  font-size: 1.3em;
+  line-height: 1.3em;
+  margin-top: 20px;
+  color: gray;
+  font-family: Roboto-medium;
+  font-weight: 100; }

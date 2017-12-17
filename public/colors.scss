@@ -6,7 +6,9 @@ $colors: (
         dark-gray: #8F8F8F,
         dark-color: #0c2526,
         black-color: #092626,
-        gray-color: #a0a0a4
+        gray-color: #a0a0a4,
+        turquoise-color: #80D7D5,
+        grey-color: #777777
 );
 
 h1 {
@@ -83,4 +85,8 @@ body {
 .center-content {
   display: table-cell;
   vertical-align: middle;
+}
+.shadow-content {
+  box-shadow: 0px 2px 10px rgba(map_get($colors, dark-gray),0.5) !important;
+  -webkit-box-shadow: 0px 2px 10px rgba(map_get($colors, dark-gray),0.5) !important;
 }

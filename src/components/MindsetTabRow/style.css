@@ -1,0 +1,116 @@
+h1 {
+  font-family: 'Roboto';
+  font-size: 4.5em;
+  font-weight: medium; }
+
+h2 {
+  font-family: 'Roboto-medium';
+  font-weight: bold !important;
+  font-size: 3em; }
+
+h3 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 2em; }
+
+h4 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 2em; }
+
+h5.bold {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 1rem; }
+
+h5.medium {
+  font-family: 'Roboto';
+  font-weight: medium;
+  font-size: 1rem; }
+
+h5.body {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 1rem; }
+
+h5.light {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  font-size: 1rem; }
+
+h6 {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  font-size: 1.25em; }
+
+button {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 1.5em; }
+
+body {
+  margin: 0; }
+
+.center-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; }
+
+.center-content {
+  display: table-cell;
+  vertical-align: middle; }
+
+.shadow-content {
+  box-shadow: 0px 2px 10px rgba(143, 143, 143, 0.5) !important;
+  -webkit-box-shadow: 0px 2px 10px rgba(143, 143, 143, 0.5) !important; }
+
+.mindset-incompleted-row {
+  height: 200px;
+  margin-bottom: 30px;
+  background: #26BCB9;
+  width: 47%;
+  margin-right: 3%;
+  display: inline-block;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden; }
+  .mindset-incompleted-row .mindest-incompleted-row-title {
+    font-size: 1.5em;
+    font-family: roboto;
+    color: white;
+    margin-top: 40px;
+    margin-left: 25px;
+    letter-spacing: 0.6px;
+    font-weight: 100; }
+  .mindset-incompleted-row .mindest-incompleted-row-description {
+    margin-top: 50px;
+    margin-left: 25px;
+    font-size: 1.2em;
+    color: white;
+    margin-right: 125px;
+    letter-spacing: 0.6px;
+    line-height: 1.4em;
+    font-family: roboto;
+    font-weight: 100;
+    margin-bottom: 40px; }
+  .mindset-incompleted-row .mindset-incompleted-button {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    padding: 0;
+    background: none !important; }
+    .mindset-incompleted-row .mindset-incompleted-button .mindset-incompleted-row-background {
+      background-color: #80D7D5;
+      width: 160px;
+      height: 160px;
+      border-radius: 80px;
+      text-align: center; }
+      .mindset-incompleted-row .mindset-incompleted-button .mindset-incompleted-row-background .mindset-incompleted-row-icon {
+        width: 55px;
+        display: inline-block;
+        margin-top: 45px; }
+  .mindset-incompleted-row .mindset-row-check-icon {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    width: 40px; }
