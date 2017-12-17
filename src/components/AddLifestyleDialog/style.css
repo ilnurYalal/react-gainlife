@@ -60,11 +60,13 @@ body {
   display: table-cell;
   vertical-align: middle; }
 
+.shadow-content {
+  box-shadow: 0px 2px 10px rgba(143, 143, 143, 0.5) !important;
+  -webkit-box-shadow: 0px 2px 10px rgba(143, 143, 143, 0.5) !important; }
+
 .lifestyle-dialog {
   background-color: white !important;
   color: #8F8F8F !important;
-  box-shadow: 0px 2px 10px rgba(143, 143, 143, 0.5) !important;
-  -webkit-box-shadow: 0px 2px 10px rgba(143, 143, 143, 0.5) !important;
   font-family: 'roboto' !important;
   font-weight: 100 !important;
   font-size: 0.7em;

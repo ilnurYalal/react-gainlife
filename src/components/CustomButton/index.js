@@ -51,7 +51,7 @@ export class AddLifestyleButton extends Component {
   
   render() {
     return (
-      <Button className="lifestyle-button" onClick={this.props.onClick}>Add your own Lifestyle Challenge</Button>
+      <Button className="lifestyle-button shadow-content" onClick={this.props.onClick}>Add your own Lifestyle Challenge</Button>
     )
   }
 }
