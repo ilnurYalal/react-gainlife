@@ -20,14 +20,15 @@ export class SaveJournalModalDialog extends Component {
   
   onClose = () => {
     this.setState({ open: false });
+    this.props.onClose();
   };
   
   onSaveClick = () => {
-    alert('save');
+    this.props.onSave();
   };
   
   onSkipClick = () => {
-    alert('skip');
+    this.props.onSkip();
   };
   
   onOpenFile = () => {
@@ -47,7 +48,7 @@ export class SaveJournalModalDialog extends Component {
   };
   
   onShare = () => {
-    alert('share');
+    this.props.onShare();
   };
   
   renderLeftContent = () => {

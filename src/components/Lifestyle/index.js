@@ -9,7 +9,8 @@ import {
 } from './../CustomButton';
 import {
   WriteJournalModalDialog,
-  SaveJournalModalDialog
+  SaveJournalModalDialog,
+  ShareModalDialog
 } from './../ModalDialog';
 import UserIcon from './../../assets/icon_user_gray@2x.png';
 import { AddLifestyleDialog } from './../AddLifestyleDialog';
@@ -26,7 +27,7 @@ export class Lifestyle extends Component {
         'Make it to the top mountain on the weekend hike.'
       ],
       isShowWriteJournalModal: false,
-      isShowModalStatus: 2 // 0: None Modal,  1: Write Journal Modal, 2: Save Journal Modal
+      isShowModalStatus: 2 // 0: None Modal,  1: Write Journal Modal, 2: Save Journal Modal, 3: Share Modal
     }
   }
   
@@ -105,6 +106,17 @@ export class Lifestyle extends Component {
     } else if (isShowModalStatus === 2) {
       return (
         <SaveJournalModalDialog
+          onSave={() => this.onClickModal(0)}
+          onClose={() => this.onClickModal(0)}
+          onShare={() => this.onClickModal(3)}
+          onSkip={() => alert('skip')}
+        />
+      );
+    } else if (isShowModalStatus === 3) {
+      return (
+        <ShareModalDialog
+          onClose={() => this.onClickModal(0)}
+          onClick={() => this.onClickModal(0)}
         />
       );
     }
