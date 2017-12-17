@@ -38,7 +38,8 @@
   .modal-title {
     font-size: 3em;
     font-weight: bold;
-    font-family: roboto-bold;
+    font-family: roboto;
+    font-weight: bold;
     color: map_get($colors, address-bar);
     text-align: center;
     margin-top: 20px;
@@ -143,20 +144,20 @@
   font-style: italic;
 }
 .save-button {
-  font-size: 2em !important;
+  font-size: 1.6em !important;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
   padding-left: 70px !important;
   padding-right: 70px !important;
   margin-top: 15px !important;
-  font-family: roboto bold !important;
+  font-family: roboto !important;
   background-color: map_get($colors, address-bar) !important;
   color: white !important;
 }
 .skip-button {
   font-size: 1.4em !important;
   margin-top: 15px !important;
-  font-family: roboto bold !important;
+  font-family: roboto !important;
   background-color: transparent !important;
   color: map_get($colors, address-bar) !important;
   padding-top: 0 !important;
@@ -164,7 +165,7 @@
 
 .save-journal-modal-right-title {
   font-weight: bold;
-  font-family: roboto-bold;
+  font-family: roboto;
   font-size: 1.7em;
   color: map_get($colors, black-color);
   line-height: 1.2em;
@@ -192,6 +193,6 @@
   left: 0;
   background: none !important;
   font-size: 1.2em !important;
-  font-family: roboto-bold !important;
+  font-family: roboto !important;
   color: map_get($colors, address-bar) !important;
 }
