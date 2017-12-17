@@ -46,6 +46,10 @@ export class SaveJournalModalDialog extends Component {
     }, false);
   };
   
+  onShare = () => {
+    alert('share');
+  };
+  
   renderLeftContent = () => {
     const { image, isShowPlaceImage } = this.state;
     const className = isShowPlaceImage ? "camera-place-image" : "camera-place-image real-image";
@@ -123,6 +127,9 @@ export class SaveJournalModalDialog extends Component {
         {this.renderContent()}
         <Button className="modal-close-button" onClick={this.onClose}>
           <Image src={CloseIcon} className="modal-close-image" />
+        </Button>
+        <Button className="journal-share-button" onClick={this.onShare}>
+          Share
         </Button>
       </Modal>
     )
