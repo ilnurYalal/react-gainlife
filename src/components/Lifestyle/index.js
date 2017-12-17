@@ -27,7 +27,7 @@ export class Lifestyle extends Component {
         'Make it to the top mountain on the weekend hike.'
       ],
       isShowWriteJournalModal: false,
-      isShowModalStatus: 0 // 0: None Modal,  1: Write Journal Modal, 2: Save Journal Modal, 3: Share Modal
+      showModalStatus: 0 // 0: None Modal,  1: Write Journal Modal, 2: Save Journal Modal, 3: Share Modal
     }
   }
   
@@ -44,11 +44,11 @@ export class Lifestyle extends Component {
   };
   
   onClickIncompleteRow = () => {
-    this.setState({ isShowModalStatus: 1 });
+    this.setState({ showModalStatus: 1 });
   };
   
-  onClickModal = (isShowModalStatus) => {
-    this.setState({ isShowModalStatus });
+  onClickModal = (showModalStatus) => {
+    this.setState({ showModalStatus });
   };
   
   renderNoCompleteContent = () => {
@@ -95,15 +95,15 @@ export class Lifestyle extends Component {
   };
   
   renderJournalModal = () => {
-    const { isShowModalStatus } = this.state;
-    if (isShowModalStatus === 1) {
+    const { showModalStatus } = this.state;
+    if (showModalStatus === 1) {
       return (
         <WriteJournalModalDialog
           onClose={() => this.onClickModal(0)}
           onClick={() => this.onClickModal(2)}
         />
       );
-    } else if (isShowModalStatus === 2) {
+    } else if (showModalStatus === 2) {
       return (
         <SaveJournalModalDialog
           onSave={() => this.onClickModal(0)}
@@ -112,7 +112,7 @@ export class Lifestyle extends Component {
           onSkip={() => alert('skip')}
         />
       );
-    } else if (isShowModalStatus === 3) {
+    } else if (showModalStatus === 3) {
       return (
         <ShareModalDialog
           onClose={() => this.onClickModal(0)}

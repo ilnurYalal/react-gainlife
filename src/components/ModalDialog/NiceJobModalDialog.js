@@ -3,9 +3,9 @@ import { Image, Modal, Button } from 'semantic-ui-react';
 import { CustomModalButton } from './../../components/CustomButton';
 import ThumbIcon from './../../assets/icon_thumb@2x.png';
 import CloseIcon from './../../assets/icon_close@2x.png';
-import './style.scss';
+import './style.css';
 
-export class ShareModalDialog extends Component {
+export class NiceJobModalDialog extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,13 +29,14 @@ export class ShareModalDialog extends Component {
       <Modal dimmer={dimmer} open={open} onClose={this.onClose} className="modal-dialog">
         <Modal.Content className="modal-content">
           <div className="modal-title">
-            Thanks for sharing!
+            Nice Job.
           </div>
           <Image src={ThumbIcon} className="modal-check-icon thumb-icon" />
           <div className="modal-title modal-description">
-            Sharing your journey keeps you accountable and inspires you peers!
+            {'You can learn a lot from regular reflection.'} <br />
+            {`Now it's time to commit to challenging yourself this week!`}
           </div>
-          <CustomModalButton name="Go to Social Feed" onClick={this.onClick}/>
+          <CustomModalButton name="Choose Lifestyle Challenge" onClick={this.onClick}/>
         </Modal.Content>
         <Button className="modal-close-button" onClick={this.onClose}>
           <Image src={CloseIcon} className="modal-close-image" />

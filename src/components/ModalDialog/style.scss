@@ -44,11 +44,11 @@
     text-align: center;
     margin-top: 20px;
     &.modal-description {
-      font-size: 2em;
+      font-size: 1.6em;
       margin-left: 50px;
       margin-right: 50px;
-      color: map_get($colors, black-color);
-      line-height: 1.2em;
+      color: #092626;
+      line-height: 1.6em;
     }
     &.save-modal {
       font-size: 2.5em;
@@ -59,6 +59,11 @@
     width: 75px;
     margin-top: 40px;
     margin-bottom: 40px;
+    &.thumb-icon {
+      width: 100px;
+      margin-top: 35px;
+      margin-bottom: 35px;
+    }
   }
 }
 
@@ -68,7 +73,9 @@
   width: 100%;
   height: 370px;
   margin-top: 10px;
-
+  &.confidence {
+    height: 400px;
+  }
   .left-content {
     flex: 1;
     border-right-color: map_get($colors, light-gray);
@@ -127,8 +134,52 @@
         padding: 10px !important;
         height: 250px;
         letter-spacing: 1.1px;
+        &.courage-textarea {
+          height: 300px;
+          margin-top: 30px;
+        }
       }
     }
+  }
+}
+.select-modal-main-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 320px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  .select-modal-left-content {
+    flex: 1;
+    margin-right: 10px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    font-size: 1.8em;
+    font-family: roboto;
+    font-weight: 100;
+    color: white;
+    text-align: left;
+    padding-top: 180px;
+    padding-left: 30px;
+    padding-right: 30px;
+    letter-spacing: 1px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent;
+    background-repeat: no-repeat;
+    &.select-modal-right-content {
+      margin-left: 10px;
+      margin-right: 0;
+      .select-modal-right-bottom-border {
+        border-bottom-width: 1.5px;
+        border-bottom-color: map_get($colors, address-bar);
+        border-bottom-style: solid;
+      }
+    }
+  }
+  .select-modal-border {
+    border-color: map_get($colors, address-bar) !important;
   }
 }
 ::-webkit-input-placeholder {
@@ -149,10 +200,12 @@
   padding-bottom: 10px !important;
   padding-left: 70px !important;
   padding-right: 70px !important;
-  margin-top: 15px !important;
+  margin-top: 25px !important;
   font-family: roboto !important;
   background-color: map_get($colors, address-bar) !important;
   color: white !important;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.5) !important;
+  -webkit-box-shadow: 0px 2px 10px rgba(0,0,0,0.5) !important;
 }
 .skip-button {
   font-size: 1.4em !important;
@@ -195,4 +248,63 @@
   font-size: 1.2em !important;
   font-family: roboto !important;
   color: map_get($colors, address-bar) !important;
+}
+
+.courage-left-title {
+  font-size: 1.3em;
+  font-family: roboto;
+  font-weight: bold;
+}
+
+.courage-left-description {
+  text-align: left;
+  line-height: 1.35em;
+  font-size: 1.2em;
+  color: map_get($colors, grey-color);
+  letter-spacing: 0.6px;
+  margin-top: 20px;
+  font-family: roboto;
+  font-weight: 100;
+}
+
+.courage-left-sub-description {
+  margin-top: 12px;
+}
+.courage-listen-content {
+  display: inline-block;
+  .courage-listen-button {
+    width: 70px;
+    height: 70px;
+    background-position: center;
+    background-size: 85% 85%;
+    margin: 5px;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 35px;
+    background-repeat: no-repeat;
+    border-color: map_get($colors, light-gray);
+    position: relative;
+    .courage-listen-label {
+      position: absolute;
+      top: 13px;
+      right: -105px;
+      font-size: 1.8em;
+      font-family: roboto;
+      font-weight: bold;
+    }
+  }
+}
+
+.select-lifestyle-description {
+  font-family: roboto;
+  font-size: 1.2em;
+  margin-top: 20px;
+  color: map_get($colors, grey-color);
+  font-weight: 100;
+}
+.select-lifestyle-left-content {
+
+}
+.select-lifestyle-right-content {
+
 }

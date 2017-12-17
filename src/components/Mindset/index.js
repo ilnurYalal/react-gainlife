@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 import { MindsetTabRow } from '../MindsetTabRow';
+import {
+  ConfidenceCourageModalDialog,
+  NiceJobModalDialog,
+  SelectLifestyleModalDialog
+} from './../ModalDialog';
 import './style.css';
 
 export class Mindset extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showModalStatus: 3 // 1: Confidence Modal, 2: Nice Job Modal, 3: Lifestyle Challenge Modal, 4: Confidence Modal
     };
   }
+  
+  onClickModal = (nextModalStatus) => {
+    this.setState({ showModalStatus: nextModalStatus });
+  };
   
   renderHeader = () => {
     return (
@@ -24,6 +34,44 @@ export class Mindset extends Component {
     );
   };
   
+  renderIncompleteDescription = () => {
+    return (
+      <div className="mindset-incomplete-description">
+        <div className="mindset-incomplete-descr-header">
+          New Activity coming soon
+        </div>
+        <div className="mindset-incomplete-descr-header mindset-incomplete-descr-body">
+          Based on your mindset personalization result, we recommend you to start from here. Explain reason why we recommend this activity.
+          Explain reason why we recommend this activity. Explain reason why we recommend this activity
+        </div>
+      </div>
+    );
+  };
+  
+  renderModal = () => {
+    const { showModalStatus } = this.state;
+    switch (showModalStatus) {
+      case 1:
+        return (
+          <ConfidenceCourageModalDialog onContinue={() => this.onClickModal(2)}/>
+        );
+      case 2:
+        return (
+          <NiceJobModalDialog
+            onClose={() => this.onClickModal(0)}
+            onClick={() => this.onClickModal(3)}
+          />
+        );
+      case 3:
+        return (
+          <SelectLifestyleModalDialog />
+        );
+      default:
+        break;
+    }
+    return null;
+  };
+  
   render() {
     return (
       <div className="mindset-tab">
@@ -34,16 +82,8 @@ export class Mindset extends Component {
               Incompleted
             </div>
             <div className="mindset-incomplete-main-content">
-              <MindsetTabRow />
-              <div className="mindset-incomplete-description">
-                <div className="mindset-incomplete-descr-header">
-                  New Activity coming soon
-                </div>
-                <div className="mindset-incomplete-descr-header mindset-incomplete-descr-body">
-                  Based on your mindset personalization result, we recommend you to start from here. Explain reason why we recommend this activity.
-                  Explain reason why we recommend this activity. Explain reason why we recommend this activity
-                </div>
-              </div>
+              <MindsetTabRow onClick={() => this.onClickModal(1)} />
+              {this.renderIncompleteDescription()}
             </div>
           </div>
           <div className="mindset-tab-incompleted-content">
@@ -52,11 +92,10 @@ export class Mindset extends Component {
             </div>
             <div className="mindset-incomplete-main-content">
               <MindsetTabRow completed={true} />
-              <MindsetTabRow completed={true} />
-              <MindsetTabRow completed={true} />
             </div>
           </div>
         </div>
+        {this.renderModal()}
       </div>
     );
   }
