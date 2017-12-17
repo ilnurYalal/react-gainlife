@@ -3,7 +3,7 @@ import { Image, Modal, Button } from 'semantic-ui-react';
 import { CustomModalButton } from './../../components/CustomButton';
 import ModalCheckIcon from './../../assets/icon_modal-check@2x.png';
 import CloseIcon from './../../assets/icon_close@2x.png';
-import style from './style.scss';
+import './style.scss';
 
 
 export class WriteJournalModalDialog extends Component {
@@ -28,7 +28,7 @@ export class WriteJournalModalDialog extends Component {
     const { open, dimmer } = this.state;
     return (
       <Modal dimmer={dimmer} open={open} onClose={this.onClose} className="modal-dialog">
-        <Modal.Content className={`${style.modalContent} a`}>
+        <Modal.Content className="modal-content">
           <div className="modal-title">
             You Did It!
           </div>
