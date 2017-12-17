@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Header } from './../../components/Header';
 import { NavigationBar } from './../../components/NavigationBar';
 import { GetStarted } from './../../components/GetStarted';
-import { Mindset } from './../Mindset';
+import { MindsetContainer } from './../MindsetContainer';
 import './style.css';
 
 class App extends Component {
@@ -24,7 +24,7 @@ class App extends Component {
         <div className="app-main">
           <NavigationBar />
           {index === 0 && <GetStarted updatePage={this.updatePage}/>}
-          {index === 1 && <Mindset />}
+          {index === 1 && <MindsetContainer />}
         </div>
       </div>
     );

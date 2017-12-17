@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Image, Modal, Button, TextArea, Form } from 'semantic-ui-react';
-import { CustomModalButton } from './../../components/CustomButton';
-import ModalCheckIcon from './../../assets/icon_modal-check@2x.png';
 import CloseIcon from './../../assets/icon_close@2x.png';
 import CameraIcon from './../../assets/icon_camera@2x.png';
 import SmallCameraIcon from './../../assets/icon_small_camera@2x.png';

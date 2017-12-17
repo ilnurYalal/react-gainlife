@@ -27,7 +27,7 @@ export class Lifestyle extends Component {
         'Make it to the top mountain on the weekend hike.'
       ],
       isShowWriteJournalModal: false,
-      isShowModalStatus: 2 // 0: None Modal,  1: Write Journal Modal, 2: Save Journal Modal, 3: Share Modal
+      isShowModalStatus: 0 // 0: None Modal,  1: Write Journal Modal, 2: Save Journal Modal, 3: Share Modal
     }
   }
   
