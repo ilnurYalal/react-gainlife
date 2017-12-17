@@ -27,7 +27,7 @@
   background-color: rgba(255, 255, 255, 0.6) !important;
 }
 
-.modalContent {
+.modal-content {
   height: 500px;
   border-radius: 20px !important;
   text-align: center;
@@ -70,7 +70,7 @@
   .left-content {
     flex: 1;
     border-right-color: map_get($colors, light-gray);
-    .camera-image {
+    .camera-place-image {
       border-width: 3.5px;
       border-style: dashed;
       height: 200px;
@@ -82,7 +82,12 @@
       box-shadow: 0px 1px 10px rgba(map_get($colors, dark-gray), 0.5);
       background-size: 100px;
       background-repeat: no-repeat;
-      background-position: center
+      background-position: center;
+      margin-top: 70px;
+      &.real-image {
+        background-size: cover;
+        background-position: center;
+      }
     }
     .upload-button {
       background: none;
@@ -104,7 +109,37 @@
   }
   .right-content {
     flex: 1;
+    .form-textarea {
+      margin-left: 20px;
+      .addlifestyle-textarea {
+        font-family: 'roboto';
+        font-weight: 100 !important;
+        font-size: 1.2em !important;
+        //font-style: italic;
+        margin-bottom: 0px;
+        resize: none !important;
+        border-width: 1px !important;
+        border-color: map_get($colors, address-bar) !important;
+        border-style: solid !important;
+        margin-top: 10px;
+        padding: 10px !important;
+        height: 250px;
+        letter-spacing: 1.1px;
+      }
+    }
   }
+}
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+:-moz-placeholder {
+  font-style: italic;
+}
+::-moz-placeholder {
+  font-style: italic;
+}
+:-ms-input-placeholder {
+  font-style: italic;
 }
 .save-button {
   font-size: 2em !important;
@@ -124,4 +159,29 @@
   background-color: transparent !important;
   color: map_get($colors, address-bar) !important;
   padding-top: 0 !important;
+}
+
+.save-journal-modal-right-title {
+  font-weight: bold;
+  font-family: roboto-bold;
+  font-size: 1.7em;
+  color: map_get($colors, black-color);
+  line-height: 1.2em;
+  text-align: left;
+  margin-left: 20px;
+}
+.save-journal-modal-right-description {
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-family: roboto;
+  font-size: 1.25em;
+  padding-left: 10px;
+  border-left-color: map_get($colors, address-bar);
+  color: map_get($colors, black-color);
+  border-left-width: 3px;
+  border-left-style: solid;
+  font-style: italic;
+  padding-right: 10px;
+  letter-spacing: 1.2px;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Modal, Button } from 'semantic-ui-react';
+import { Image, Modal, Button, TextArea, Form } from 'semantic-ui-react';
 import { CustomModalButton } from './../../components/CustomButton';
 import ModalCheckIcon from './../../assets/icon_modal-check@2x.png';
 import CloseIcon from './../../assets/icon_close@2x.png';
@@ -13,7 +13,8 @@ export class SaveJournalModalDialog extends Component {
     this.state = {
       open: true,
       dimmer: 'blurring',
-      image: CameraIcon
+      image: CameraIcon,
+      isShowPlaceImage: true
     }
   }
   
@@ -41,17 +42,21 @@ export class SaveJournalModalDialog extends Component {
     var reader  = new FileReader();
     reader.readAsDataURL(image);
     reader.addEventListener("load", () => {
-      this.setState({ image: reader.result });
+      this.setState({ image: reader.result, isShowPlaceImage: false });
     }, false);
   };
   
   renderLeftContent = () => {
-    const { image } = this.state;
+    const { image, isShowPlaceImage } = this.state;
+    const className = isShowPlaceImage ? "camera-place-image" : "camera-place-image real-image";
     return (
       <div className="left-content">
         <div className="center-wrapper">
           <div className="center-content">
-            <div className="camera-image" style={{ backgroundImage: `url(${image})` }} />
+            <div
+              className={className}
+              style={{ backgroundImage: `url(${image})` }}
+            />
             <Button className="upload-button" onClick={this.onOpenFile}>
               <Image src={SmallCameraIcon} className="camera-icon"/>
               <span className="button-name">Upload Picture</span>
@@ -73,7 +78,19 @@ export class SaveJournalModalDialog extends Component {
   renderRightContent = () => {
     return (
       <div className="right-content">
-  
+        <div className="save-journal-modal-right-title">
+          Lifestyle Challenge - Confidence
+        </div>
+        <div className="save-journal-modal-right-description">
+          Make it to the top mountain on the weekend hike.
+        </div>
+        <Form className="form-textarea">
+          <TextArea
+            placeholder="How did it go?"
+            className="addlifestyle-textarea"
+            onChange={this.onChange}
+          />
+        </Form>
       </div>
     );
   };
