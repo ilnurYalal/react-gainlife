@@ -69,7 +69,6 @@ body {
   font-family: 'Roboto';
   font-weight: bold;
   height: calc(100% - 205px);
-  display: flex;
   flex-direction: column; }
   .mindset-tab .mindset-tab-scroll {
     overflow: scroll;

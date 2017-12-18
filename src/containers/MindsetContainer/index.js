@@ -5,12 +5,13 @@ import BackgroundImage from './../../assets/images.jpeg';
 import { TAB_ITEMS } from './../../constants';
 import { Lifestyle } from './../../components/Lifestyle';
 import { Mindset } from './../../components/Mindset';
+import { Journal } from './../../components/Journal';
 
 export class MindsetContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeIndex: 0 // 0: lifestyle, 1: mindset, 2: journal
+      activeIndex: 2 // 0: lifestyle, 1: mindset, 2: journal
     }
   }
   
@@ -30,7 +31,9 @@ export class MindsetContainer extends Component {
           <Mindset />
         );
       case 2:
-        break;
+        return (
+          <Journal />
+        );
       default:
         break;
     }

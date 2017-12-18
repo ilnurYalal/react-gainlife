@@ -13,10 +13,9 @@ export class MindsetTabRow extends Component {
   }
   
   onClick = () => {
-    const { isShowCheckIcon } = this.state;
-    // if (!isShowCheckIcon) {
-      this.props.onClick ? this.props.onClick() : null;
-    // }
+    if (this.props.onClick) {
+      this.props.onClick();
+    }
   };
   
   render() {
