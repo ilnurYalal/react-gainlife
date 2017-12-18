@@ -17,10 +17,15 @@ export class SelectLifestyleModalDialog extends Component {
   
   onClose = () => {
     this.setState({ open: false });
+    this.props.onClose();
   };
   
   onClick = (selctedIndex) => {
     this.setState({ selctedIndex });
+  };
+  
+  onContinueClick = () => {
+    this.props.onContinue();
   };
   
   renderMainContent = () => {
@@ -60,7 +65,7 @@ export class SelectLifestyleModalDialog extends Component {
           Set a goal to get out of your comfort zone this week
         </div>
         {this.renderMainContent()}
-        <Button className="save-button" circular={true} onClick={this.onSaveClick}>
+        <Button className="save-button" circular={true} onClick={this.onContinueClick}>
           Continue
         </Button>
       </Modal.Content>

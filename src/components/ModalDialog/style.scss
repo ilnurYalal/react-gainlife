@@ -32,6 +32,9 @@
   height: 500px;
   border-radius: 20px !important;
   text-align: center;
+  &.lifestyle-confidence-content {
+    padding: 0!important;
+  }
   &.save-modal-content {
     height: 600px;
   }
@@ -206,6 +209,9 @@
   color: white !important;
   box-shadow: 0px 2px 10px rgba(0,0,0,0.5) !important;
   -webkit-box-shadow: 0px 2px 10px rgba(0,0,0,0.5) !important;
+  &.lifestyle-confidence-button {
+    margin-top: 50px !important;
+  }
 }
 .skip-button {
   font-size: 1.4em !important;
@@ -302,9 +308,23 @@
   color: map_get($colors, grey-color);
   font-weight: 100;
 }
-.select-lifestyle-left-content {
-
-}
-.select-lifestyle-right-content {
-
+.confidence-background-image {
+  width: 100%;
+  height: 100%;
+  background-color: orange;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  .confidence-title {
+    font-size: 3em;
+    font-family: roboto;
+    font-weight: bold;
+    color: white;
+    padding-top: 60px;
+    &.confidence-description {
+      font-size: 1.7em;
+      margin-top: 140px;
+      letter-spacing: 0.6px;
+    }
+  }
 }

@@ -3,7 +3,8 @@ import { MindsetTabRow } from '../MindsetTabRow';
 import {
   ConfidenceCourageModalDialog,
   NiceJobModalDialog,
-  SelectLifestyleModalDialog
+  SelectLifestyleModalDialog,
+  LifestyleConfidenceModalDialog
 } from './../ModalDialog';
 import './style.css';
 
@@ -11,7 +12,7 @@ export class Mindset extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModalStatus: 3 // 1: Confidence Modal, 2: Nice Job Modal, 3: Lifestyle Challenge Modal, 4: Confidence Modal
+      showModalStatus: 0 // 1: Confidence Modal, 2: Nice Job Modal, 3: Lifestyle Challenge Modal, 4: Confidence Modal
     };
   }
   
@@ -53,7 +54,10 @@ export class Mindset extends Component {
     switch (showModalStatus) {
       case 1:
         return (
-          <ConfidenceCourageModalDialog onContinue={() => this.onClickModal(2)}/>
+          <ConfidenceCourageModalDialog
+            onContinue={() => this.onClickModal(2)}
+            onClose={() => this.onClickModal(0)}
+          />
         );
       case 2:
         return (
@@ -64,7 +68,17 @@ export class Mindset extends Component {
         );
       case 3:
         return (
-          <SelectLifestyleModalDialog />
+          <SelectLifestyleModalDialog
+            onContinue={() => this.onClickModal(4)}
+            onClose={() => this.onClickModal(0)}
+          />
+        );
+      case 4:
+        return (
+          <LifestyleConfidenceModalDialog
+            onCommit={() => this.onClickModal(0)}
+            onClose={() => this.onClickModal(0)}
+          />
         );
       default:
         break;
