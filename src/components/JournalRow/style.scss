@@ -1,14 +1,16 @@
+@import "public/colors";
 .journal-row-content {
-  border-color: gray;
-  border-width: 1px;
-  border-style: solid;
-  display: flex;
+  border-color: map_get($colors, light-gray) !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  display: flex !important;
   align-items: center;
+  padding: 0;
+  background: none !important;
   .journal-row-content-main-content {
-    background-color: white;
     height: 110px;
-    width: 70%;
     padding-left: 15px;
+    flex: 1;
     .journal-row-content-title {
       text-align: left;
       font-size: 1.3em;
@@ -19,12 +21,19 @@
     }
   }
   .journal-row-content-img {
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     background-position: center;
     background-size: cover;
+    margin-left: 65px;
   }
   .journal-row-content-date {
-
+    margin-left: 30px;
+    font-size: 1em;
+    color: map_get($colors, dark-gray);
+  }
+  .journal-row-content-sub-content {
+    width: 250px;
+    display: flex;
   }
 }

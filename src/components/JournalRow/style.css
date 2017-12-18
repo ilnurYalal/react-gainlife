@@ -1,14 +1,77 @@
+h1 {
+  font-family: 'Roboto';
+  font-size: 4.5em;
+  font-weight: medium; }
+
+h2 {
+  font-family: 'Roboto-medium';
+  font-weight: bold !important;
+  font-size: 3em; }
+
+h3 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 2em; }
+
+h4 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 2em; }
+
+h5.bold {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 1rem; }
+
+h5.medium {
+  font-family: 'Roboto';
+  font-weight: medium;
+  font-size: 1rem; }
+
+h5.body {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 1rem; }
+
+h5.light {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  font-size: 1rem; }
+
+h6 {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  font-size: 1.25em; }
+
+button {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 1.5em; }
+
+body {
+  margin: 0; }
+
+.center-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; }
+
+.center-content {
+  display: table-cell;
+  vertical-align: middle; }
+
 .journal-row-content {
-  border-color: gray;
-  border-width: 1px;
-  border-style: solid;
-  display: flex;
-  align-items: center; }
+  border-color: #D8D8D8 !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  display: flex !important;
+  align-items: center;
+  padding: 0;
+  background: none !important; }
   .journal-row-content .journal-row-content-main-content {
-    background-color: white;
     height: 110px;
-    width: 70%;
-    padding-left: 15px; }
+    padding-left: 15px;
+    flex: 1; }
     .journal-row-content .journal-row-content-main-content .journal-row-content-title {
       text-align: left;
       font-size: 1.3em; }
@@ -16,7 +79,15 @@
         color: gray;
         margin-top: 10px; }
   .journal-row-content .journal-row-content-img {
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     background-position: center;
-    background-size: cover; }
+    background-size: cover;
+    margin-left: 65px; }
+  .journal-row-content .journal-row-content-date {
+    margin-left: 30px;
+    font-size: 1em;
+    color: #8F8F8F; }
+  .journal-row-content .journal-row-content-sub-content {
+    width: 250px;
+    display: flex; }
