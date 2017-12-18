@@ -14,6 +14,7 @@ export class ConfidenceCourageModalDialog extends Component {
   
   onClose = () => {
     this.setState({ open: false });
+    this.props.onClose();
   };
   
   onChange = (e) => {

@@ -10,7 +10,7 @@ export class MindsetContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeIndex: 1 // 0: lifestyle, 1: mindset, 2: journal
+      activeIndex: 0 // 0: lifestyle, 1: mindset, 2: journal
     }
   }
   
@@ -57,6 +57,7 @@ export class MindsetContainer extends Component {
             className="tab"
             onTabChange={this.onTabChange}
             renderActiveOnly={false}
+            defaultActiveIndex={activeIndex}
           />
         </div>
         {this.renderTabContent()}
