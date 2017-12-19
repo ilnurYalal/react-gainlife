@@ -5,3 +5,4 @@ export { ConfidenceCourageModalDialog } from './ConfidenceCourageModalDialog';
 export { NiceJobModalDialog } from './NiceJobModalDialog';
 export { SelectLifestyleModalDialog } from './SelectLifestyleModalDialog';
 export { LifestyleConfidenceModalDialog } from './LifestyleConfidenceModalDialog';
+export { WriteJournalEntryModalDialog } from './WriteJournalEntryModalDialog';

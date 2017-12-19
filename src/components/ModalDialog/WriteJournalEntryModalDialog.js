@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { Image, Modal, Button, TextArea, Form } from 'semantic-ui-react';
 import CloseIcon from './../../assets/icon_close@2x.png';
-import CameraIcon from './../../assets/icon_camera@2x.png';
 import WhiteCloseIcon from './../../assets/icon_close_white@2x.png';
+import CameraIcon from './../../assets/icon_camera@2x.png';
+import BackImg from './../../assets/img_background.jpg';
 import SmallCameraIcon from './../../assets/icon_small_camera@2x.png';
 import './style.css';
 
-export class SaveJournalModalDialog extends Component {
+export class WriteJournalEntryModalDialog extends Component {
   constructor(props) {
     super(props);
     this.state = {
       open: true,
       dimmer: 'blurring',
-      image: CameraIcon,
-      isShowPlaceImage: true
+      image: props.image ? props.image : CameraIcon,
+      isShowPlaceImage: !props.image,
+      description: props.description ? props.description: null
     }
   }
   
@@ -22,12 +24,12 @@ export class SaveJournalModalDialog extends Component {
     this.props.onClose();
   };
   
-  onSaveClick = () => {
-    this.props.onSave();
+  onFinishClick = () => {
+    this.props.onFinish();
   };
   
-  onSkipClick = () => {
-    this.props.onSkip();
+  onDelete = () => {
+    this.props.onDelete();
   };
   
   onOpenFile = () => {
@@ -37,9 +39,9 @@ export class SaveJournalModalDialog extends Component {
   onChangeFile = (event) => {
     event.stopPropagation();
     event.preventDefault();
-    var image = event.target.files[0];
+    const image = event.target.files[0];
     console.log(event.target.files);
-    var reader  = new FileReader();
+    const reader  = new FileReader();
     reader.readAsDataURL(image);
     reader.addEventListener("load", () => {
       this.setState({ image: reader.result, isShowPlaceImage: false });
@@ -52,6 +54,10 @@ export class SaveJournalModalDialog extends Component {
   
   onRemoveImg = () => {
     this.setState({ isShowPlaceImage: true, image: CameraIcon });
+  };
+  
+  onChange = (description) => {
+    this.setState({ description });
   };
   
   renderLeftContent = () => {
@@ -91,6 +97,7 @@ export class SaveJournalModalDialog extends Component {
   };
   
   renderRightContent = () => {
+    const { description } = this.state;
     return (
       <div className="right-content">
         <div className="save-journal-modal-right-title">
@@ -104,6 +111,7 @@ export class SaveJournalModalDialog extends Component {
             placeholder="How did it go?"
             className="addlifestyle-textarea"
             onChange={this.onChange}
+            value={description}
           />
         </Form>
       </div>
@@ -120,12 +128,12 @@ export class SaveJournalModalDialog extends Component {
           {this.renderLeftContent()}
           {this.renderRightContent()}
         </div>
-        <Button className="save-button" circular={true} onClick={this.onSaveClick}>
-          Save
+        <Button className="save-button" circular={true} onClick={this.onFinishClick}>
+          Finish
         </Button>
         <br />
-        <Button className="skip-button" onClick={this.onSkipClick}>
-          skip journal for now
+        <Button className="skip-button" onClick={this.onDelete}>
+          Delete
         </Button>
       </Modal.Content>
     )

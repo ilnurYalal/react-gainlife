@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button } from 'semantic-ui-react';
 import BackImg from './../../assets/img_background.jpg'
 import './style.css';
 
@@ -11,7 +10,7 @@ export class JournalRow extends Component {
   }
   
   onClick = () => {
-    alert('onClick');
+    this.props.onClick();
   };
   
   render() {

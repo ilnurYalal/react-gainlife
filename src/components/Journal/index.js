@@ -2,16 +2,28 @@ import React, { Component } from 'react';
 import { Button, Icon, Image } from 'semantic-ui-react';
 import UserIcon from './../../assets/icon_user_gray@2x.png';
 import { JournalRow } from './../JournalRow';
+import { WriteJournalEntryModalDialog } from './../ModalDialog';
+import BackImg from './../../assets/img_background.jpg'
 import './style.css';
+
 export class Journal extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showModalStatus: 0 // 1: Write a Journal
     }
   }
   
+  onClickModal = (showModalStatus) => {
+    this.setState({ showModalStatus });
+  };
+  
   onNewEntry = () => {
-    alert('new entry');
+    this.setState({ showModalStatus: 1 });
+  };
+  
+  onRowClick = () => {
+    this.setState({ showModalStatus: 2 });
   };
   
   renderHeader = () => {
@@ -56,9 +68,40 @@ export class Journal extends Component {
   renderJournal = () => {
     return (
       <div className="journal-tab-main-content">
-        <JournalRow />
+        <JournalRow
+          onClick={this.onRowClick}
+        />
       </div>
     );
+  };
+  
+  renderJournalModal = () => {
+    const { showModalStatus } = this.state;
+    switch (showModalStatus) {
+      case 1:
+        return (
+          <WriteJournalEntryModalDialog
+            onClose={() => this.onClickModal(0)}
+            onFinish={() => this.onClickModal(0)}
+            onDelete={() => this.onClickModal(0)}
+            onShare={() => alert('onShare')}
+          />
+        );
+      case 2:
+        return (
+          <WriteJournalEntryModalDialog
+            onClose={() => this.onClickModal(0)}
+            onFinish={() => this.onClickModal(0)}
+            onDelete={() => this.onClickModal(0)}
+            onShare={() => alert('onShare')}
+            description={'I made it to the top of mountain last week I made it to the top of mountain last week I made it to the top of mountain last week'}
+            image={BackImg}
+          />
+        );
+      default:
+        break;
+    }
+    return null;
   };
   
   render() {
@@ -67,6 +110,7 @@ export class Journal extends Component {
         {this.renderHeader()}
         {this.renderSubTitle()}
         {this.renderJournal()}
+        {this.renderJournalModal()}
       </div>
     );
   }
