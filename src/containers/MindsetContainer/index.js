@@ -11,7 +11,7 @@ export class MindsetContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeIndex: 2 // 0: lifestyle, 1: mindset, 2: journal
+      activeIndex: 0 // 0: lifestyle, 1: mindset, 2: journal
     }
   }
   

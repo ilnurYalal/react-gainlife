@@ -3,3 +3,6 @@
     min-height: 768px;
     min-width: 1366px;
 }
+#gainlife-body {
+    overflow: scroll;
+}
