@@ -3,7 +3,6 @@ import { Image, Modal, Button, TextArea, Form } from 'semantic-ui-react';
 import CloseIcon from './../../assets/icon_close@2x.png';
 import WhiteCloseIcon from './../../assets/icon_close_white@2x.png';
 import CameraIcon from './../../assets/icon_camera@2x.png';
-import BackImg from './../../assets/img_background.jpg';
 import SmallCameraIcon from './../../assets/icon_small_camera@2x.png';
 import './style.css';
 
@@ -15,7 +14,7 @@ export class WriteJournalEntryModalDialog extends Component {
       dimmer: 'blurring',
       image: props.image ? props.image : CameraIcon,
       isShowPlaceImage: !props.image,
-      description: props.description ? props.description: null
+      description: props.description ? props.description: ''
     }
   }
   
@@ -62,6 +61,7 @@ export class WriteJournalEntryModalDialog extends Component {
   
   renderLeftContent = () => {
     const { image, isShowPlaceImage } = this.state;
+    const { fourthButtonName } = this.props;
     const imgClassName = isShowPlaceImage ? "camera-place-image" : "camera-place-image real-image";
     const iconClassName = isShowPlaceImage ? "camera-close-icon hidden" : "camera-close-icon";
     return (
@@ -80,7 +80,7 @@ export class WriteJournalEntryModalDialog extends Component {
             </div>
             <Button className="upload-button" onClick={this.onOpenFile}>
               <Image src={SmallCameraIcon} className="camera-icon"/>
-              <span className="button-name">Upload Picture</span>
+              <span className="button-name">{fourthButtonName}</span>
             </Button>
           </div>
           <input
@@ -98,17 +98,18 @@ export class WriteJournalEntryModalDialog extends Component {
   
   renderRightContent = () => {
     const { description } = this.state;
+    const { rightTitle, rightDescription, inputPlaceholder } = this.props;
     return (
       <div className="right-content">
         <div className="save-journal-modal-right-title">
-          Lifestyle Challenge - Confidence
+          {rightTitle}
         </div>
         <div className="save-journal-modal-right-description">
-          Make it to the top mountain on the weekend hike.
+          {rightDescription}
         </div>
         <Form className="form-textarea">
           <TextArea
-            placeholder="How did it go?"
+            placeholder={inputPlaceholder}
             className="addlifestyle-textarea"
             onChange={this.onChange}
             value={description}
@@ -119,21 +120,22 @@ export class WriteJournalEntryModalDialog extends Component {
   };
   
   renderContent = () => {
+    const { title, firstButtonName, secondButtonName } = this.props;
     return (
       <Modal.Content className="modal-content save-modal-content">
         <div className="modal-title save-modal">
-          Journal Entry
+          {title}
         </div>
         <div className="save-modal-main-content">
           {this.renderLeftContent()}
           {this.renderRightContent()}
         </div>
         <Button className="save-button" circular={true} onClick={this.onFinishClick}>
-          Finish
+          {firstButtonName}
         </Button>
         <br />
         <Button className="skip-button" onClick={this.onDelete}>
-          Delete
+          {secondButtonName}
         </Button>
       </Modal.Content>
     )
@@ -141,6 +143,7 @@ export class WriteJournalEntryModalDialog extends Component {
   
   render() {
     const { open, dimmer } = this.state;
+    const { thirdButtonName } = this.props;
     return (
       <Modal dimmer={dimmer} open={open} onClose={this.onClose} className="modal-dialog save-modal">
         {this.renderContent()}
@@ -148,7 +151,7 @@ export class WriteJournalEntryModalDialog extends Component {
           <Image src={CloseIcon} className="modal-close-image" />
         </Button>
         <Button className="journal-share-button" onClick={this.onShare}>
-          Share
+          {thirdButtonName}
         </Button>
       </Modal>
     )

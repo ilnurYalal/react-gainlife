@@ -26,17 +26,18 @@ export class WriteJournalModalDialog extends Component {
   
   render() {
     const { open, dimmer } = this.state;
+    const { title, description, buttonName } = this.props;
     return (
       <Modal dimmer={dimmer} open={open} onClose={this.onClose} className="modal-dialog">
         <Modal.Content className="modal-content">
           <div className="modal-title">
-            You Did It!
+            {title}
           </div>
           <Image src={ModalCheckIcon} className="modal-check-icon" />
           <div className="modal-title modal-description">
-            Getting outside your comfort zone takes some work - but it's well worth it!
+            {description}
           </div>
-          <CustomModalButton name="Write a journal entry" onClick={this.onClick}/>
+          <CustomModalButton name={buttonName} onClick={this.onClick}/>
         </Modal.Content>
         <Button className="modal-close-button" onClick={this.onClose}>
           <Image src={CloseIcon} className="modal-close-image" />

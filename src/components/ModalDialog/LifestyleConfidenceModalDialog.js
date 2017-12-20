@@ -24,18 +24,19 @@ export class LifestyleConfidenceModalDialog extends Component {
   
   render() {
     const { open, dimmer } = this.state;
+    const { title, description, buttonName } = this.props;
     return (
       <Modal dimmer={dimmer} open={open} onClose={this.onClose} className="modal-dialog">
         <Modal.Content className="modal-content lifestyle-confidence-content">
           <div className="confidence-background-image" style={{ backgroundImage: `url(${BackImg})` }}>
             <div className="confidence-title">
-              Confidence
+              {title}
             </div>
             <div className="confidence-title confidence-description">
-              Make it to the top of the mountain on the weekend hike.
+              {description}
             </div>
             <Button className="save-button lifestyle-confidence-button" circular={true} onClick={this.onCommit}>
-              Commit
+              {buttonName}
             </Button>
           </div>
         </Modal.Content>

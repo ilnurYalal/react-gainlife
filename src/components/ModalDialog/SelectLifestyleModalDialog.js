@@ -30,6 +30,7 @@ export class SelectLifestyleModalDialog extends Component {
   
   renderMainContent = () => {
     const { selctedIndex } = this.state;
+    const { leftLabel, rightLabel } = this.props;
     return (
       <div className="select-modal-main-content">
         <div
@@ -38,7 +39,7 @@ export class SelectLifestyleModalDialog extends Component {
           onClick={() => this.onClick(0)}
         >
           <div>
-            Tray a high-intensity gym class
+            {leftLabel}
           </div>
         </div>
         <div
@@ -47,7 +48,7 @@ export class SelectLifestyleModalDialog extends Component {
           onClick={() => this.onClick(1)}
         >
           <div>
-            Make it to the top mountain on the weekend hike
+            {rightLabel}
           </div>
           <div className="select-modal-right-bottom-border" />
         </div>
@@ -56,17 +57,18 @@ export class SelectLifestyleModalDialog extends Component {
   };
   
   renderContent = () => {
+    const { title, description, buttonName } = this.props;
     return (
       <Modal.Content className="modal-content save-modal-content">
         <div className="modal-title save-modal">
-          Lifestyle Challenge
+          {title}
         </div>
         <div className="select-lifestyle-description">
-          Set a goal to get out of your comfort zone this week
+          {description}
         </div>
         {this.renderMainContent()}
         <Button className="save-button" circular={true} onClick={this.onContinueClick}>
-          Continue
+          {buttonName}
         </Button>
       </Modal.Content>
     )

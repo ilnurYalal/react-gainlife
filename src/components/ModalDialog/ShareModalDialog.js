@@ -25,17 +25,18 @@ export class ShareModalDialog extends Component {
   
   render() {
     const { open, dimmer } = this.state;
+    const { title, description, buttonName } = this.props;
     return (
       <Modal dimmer={dimmer} open={open} onClose={this.onClose} className="modal-dialog">
         <Modal.Content className="modal-content">
           <div className="modal-title">
-            Thanks for sharing!
+            {title}
           </div>
           <Image src={ThumbIcon} className="modal-check-icon thumb-icon" />
           <div className="modal-title modal-description">
-            Sharing your journey keeps you accountable and inspires you peers!
+            {description}
           </div>
-          <CustomModalButton name="Go to Social Feed" onClick={this.onClick}/>
+          <CustomModalButton name={buttonName} onClick={this.onClick}/>
         </Modal.Content>
         <Button className="modal-close-button" onClick={this.onClose}>
           <Image src={CloseIcon} className="modal-close-image" />

@@ -56,6 +56,7 @@ export class SaveJournalModalDialog extends Component {
   
   renderLeftContent = () => {
     const { image, isShowPlaceImage } = this.state;
+    const { fourthButtonName } = this.props;
     const imgClassName = isShowPlaceImage ? "camera-place-image" : "camera-place-image real-image";
     const iconClassName = isShowPlaceImage ? "camera-close-icon hidden" : "camera-close-icon";
     return (
@@ -74,7 +75,7 @@ export class SaveJournalModalDialog extends Component {
             </div>
             <Button className="upload-button" onClick={this.onOpenFile}>
               <Image src={SmallCameraIcon} className="camera-icon"/>
-              <span className="button-name">Upload Picture</span>
+              <span className="button-name">{fourthButtonName}</span>
             </Button>
           </div>
           <input
@@ -91,17 +92,18 @@ export class SaveJournalModalDialog extends Component {
   };
   
   renderRightContent = () => {
+    const { inputPlaceholder, rightDescription, rightTitle } = this.props;
     return (
       <div className="right-content">
         <div className="save-journal-modal-right-title">
-          Lifestyle Challenge - Confidence
+          {rightTitle}
         </div>
         <div className="save-journal-modal-right-description">
-          Make it to the top mountain on the weekend hike.
+          {rightDescription}
         </div>
         <Form className="form-textarea">
           <TextArea
-            placeholder="How did it go?"
+            placeholder={inputPlaceholder}
             className="addlifestyle-textarea"
             onChange={this.onChange}
           />
@@ -111,21 +113,22 @@ export class SaveJournalModalDialog extends Component {
   };
   
   renderContent = () => {
+    const { title, firstButtonName, secondButtonName } = this.props;
     return (
       <Modal.Content className="modal-content save-modal-content">
         <div className="modal-title save-modal">
-          Journal Entry
+          {title}
         </div>
         <div className="save-modal-main-content">
           {this.renderLeftContent()}
           {this.renderRightContent()}
         </div>
         <Button className="save-button" circular={true} onClick={this.onSaveClick}>
-          Save
+          {firstButtonName}
         </Button>
         <br />
         <Button className="skip-button" onClick={this.onSkipClick}>
-          skip journal for now
+          {secondButtonName}
         </Button>
       </Modal.Content>
     )
@@ -133,6 +136,7 @@ export class SaveJournalModalDialog extends Component {
   
   render() {
     const { open, dimmer } = this.state;
+    const { thirdButtonName } = this.props;
     return (
       <Modal dimmer={dimmer} open={open} onClose={this.onClose} className="modal-dialog save-modal">
         {this.renderContent()}
@@ -140,7 +144,7 @@ export class SaveJournalModalDialog extends Component {
           <Image src={CloseIcon} className="modal-close-image" />
         </Button>
         <Button className="journal-share-button" onClick={this.onShare}>
-          Share
+          {thirdButtonName}
         </Button>
       </Modal>
     )

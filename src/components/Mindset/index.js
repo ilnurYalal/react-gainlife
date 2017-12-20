@@ -6,6 +6,12 @@ import {
   SelectLifestyleModalDialog,
   LifestyleConfidenceModalDialog
 } from './../ModalDialog';
+import {
+  CONFIDENCE_COURAGE,
+  NICE_JOB,
+  SELECT_LIFESTYLE,
+  LIFESTYLE_CONFIDENCE
+} from './../../constants';
 import './style.css';
 
 export class Mindset extends Component {
@@ -57,6 +63,14 @@ export class Mindset extends Component {
           <ConfidenceCourageModalDialog
             onContinue={() => this.onClickModal(2)}
             onClose={() => this.onClickModal(0)}
+            title={CONFIDENCE_COURAGE.title}
+            description={CONFIDENCE_COURAGE.description}
+            subTitle={CONFIDENCE_COURAGE.subTitle}
+            inputPlaceholder={CONFIDENCE_COURAGE.inputPlaceholder}
+            inputTitle={CONFIDENCE_COURAGE.inputTitle}
+            buttonName={CONFIDENCE_COURAGE.buttonName}
+            leftTitle={CONFIDENCE_COURAGE.leftTitle}
+            audioTitle={CONFIDENCE_COURAGE.audioTitle}
           />
         );
       case 2:
@@ -64,6 +78,8 @@ export class Mindset extends Component {
           <NiceJobModalDialog
             onClose={() => this.onClickModal(0)}
             onClick={() => this.onClickModal(3)}
+            title={NICE_JOB.title}
+            description={NICE_JOB.description}
           />
         );
       case 3:
@@ -71,6 +87,11 @@ export class Mindset extends Component {
           <SelectLifestyleModalDialog
             onContinue={() => this.onClickModal(4)}
             onClose={() => this.onClickModal(0)}
+            title={SELECT_LIFESTYLE.title}
+            description={SELECT_LIFESTYLE.description}
+            buttonName={SELECT_LIFESTYLE.buttonName}
+            leftLabel={SELECT_LIFESTYLE.leftLabel}
+            rightLabel={SELECT_LIFESTYLE.rightLabel}
           />
         );
       case 4:
@@ -78,6 +99,9 @@ export class Mindset extends Component {
           <LifestyleConfidenceModalDialog
             onCommit={() => this.onClickModal(0)}
             onClose={() => this.onClickModal(0)}
+            title={LIFESTYLE_CONFIDENCE.title}
+            description={LIFESTYLE_CONFIDENCE.description}
+            buttonName={LIFESTYLE_CONFIDENCE.buttonName}
           />
         );
       default:

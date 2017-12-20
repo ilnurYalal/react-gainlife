@@ -14,6 +14,11 @@ import {
 } from './../ModalDialog';
 import UserIcon from './../../assets/icon_user_gray@2x.png';
 import { AddLifestyleDialog } from './../AddLifestyleDialog';
+import {
+  WRITE_JOURNAL,
+  SAVE_JOURNAL_ENTRY,
+  SHARE
+} from './../../constants';
 
 export class Lifestyle extends Component {
   constructor(props) {
@@ -101,6 +106,9 @@ export class Lifestyle extends Component {
         <WriteJournalModalDialog
           onClose={() => this.onClickModal(0)}
           onClick={() => this.onClickModal(2)}
+          title={WRITE_JOURNAL.title}
+          description={WRITE_JOURNAL.description}
+          buttonName={WRITE_JOURNAL.buttonName}
         />
       );
     } else if (showModalStatus === 2) {
@@ -110,6 +118,14 @@ export class Lifestyle extends Component {
           onClose={() => this.onClickModal(0)}
           onShare={() => this.onClickModal(3)}
           onSkip={() => alert('skip')}
+          title={SAVE_JOURNAL_ENTRY.title}
+          rightTitle={SAVE_JOURNAL_ENTRY.rightTitle}
+          rightDescription={SAVE_JOURNAL_ENTRY.rightDescription}
+          firstButtonName={SAVE_JOURNAL_ENTRY.firstButtonName}
+          secondButtonName={SAVE_JOURNAL_ENTRY.secondButtonName}
+          thirdButtonName={SAVE_JOURNAL_ENTRY.thirdButtonName}
+          fourthButtonName={SAVE_JOURNAL_ENTRY.fourthButtonName}
+          inputPlaceholder={SAVE_JOURNAL_ENTRY.inputPlaceholder}
         />
       );
     } else if (showModalStatus === 3) {
@@ -117,6 +133,9 @@ export class Lifestyle extends Component {
         <ShareModalDialog
           onClose={() => this.onClickModal(0)}
           onClick={() => this.onClickModal(0)}
+          title={SHARE.title}
+          description={SHARE.description}
+          buttonName={SHARE.buttonName}
         />
       );
     }

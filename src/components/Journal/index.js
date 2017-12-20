@@ -3,6 +3,7 @@ import { Button, Icon, Image } from 'semantic-ui-react';
 import UserIcon from './../../assets/icon_user_gray@2x.png';
 import { JournalRow } from './../JournalRow';
 import { WriteJournalEntryModalDialog } from './../ModalDialog';
+import { WRITE_JOURNAL_ENTRY } from './../../constants';
 import BackImg from './../../assets/img_background.jpg'
 import './style.css';
 
@@ -85,6 +86,14 @@ export class Journal extends Component {
             onFinish={() => this.onClickModal(0)}
             onDelete={() => this.onClickModal(0)}
             onShare={() => alert('onShare')}
+            title={WRITE_JOURNAL_ENTRY.title}
+            rightTitle={WRITE_JOURNAL_ENTRY.rightTitle}
+            rightDescription={WRITE_JOURNAL_ENTRY.rightDescription}
+            firstButtonName={WRITE_JOURNAL_ENTRY.firstButtonName}
+            secondButtonName={WRITE_JOURNAL_ENTRY.secondButtonName}
+            thirdButtonName={WRITE_JOURNAL_ENTRY.thirdButtonName}
+            inputPlaceholder={WRITE_JOURNAL_ENTRY.inputPlaceholder}
+            fourthButtonName={WRITE_JOURNAL_ENTRY.fourthButtonName}
           />
         );
       case 2:
@@ -96,6 +105,14 @@ export class Journal extends Component {
             onShare={() => alert('onShare')}
             description={'I made it to the top of mountain last week I made it to the top of mountain last week I made it to the top of mountain last week'}
             image={BackImg}
+            title={WRITE_JOURNAL_ENTRY.title}
+            rightTitle={WRITE_JOURNAL_ENTRY.rightTitle}
+            rightDescription={WRITE_JOURNAL_ENTRY.rightDescription}
+            firstButtonName={WRITE_JOURNAL_ENTRY.firstButtonName}
+            secondButtonName={WRITE_JOURNAL_ENTRY.secondButtonName}
+            thirdButtonName={WRITE_JOURNAL_ENTRY.thirdButtonName}
+            fourthButtonName={WRITE_JOURNAL_ENTRY.fourthButtonName}
+            inputPlaceholder={WRITE_JOURNAL_ENTRY.inputPlaceholder}
           />
         );
       default:

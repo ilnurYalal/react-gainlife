@@ -25,16 +25,16 @@ export class NiceJobModalDialog extends Component {
   
   render() {
     const { open, dimmer } = this.state;
+    const { title, description } = this.props;
     return (
       <Modal dimmer={dimmer} open={open} onClose={this.onClose} className="modal-dialog">
         <Modal.Content className="modal-content">
           <div className="modal-title">
-            Nice Job.
+            {title}
           </div>
           <Image src={ThumbIcon} className="modal-check-icon thumb-icon" />
           <div className="modal-title modal-description">
-            {'You can learn a lot from regular reflection.'} <br />
-            {`Now it's time to commit to challenging yourself this week!`}
+            {description}
           </div>
           <CustomModalButton name="Choose Lifestyle Challenge" onClick={this.onClick}/>
         </Modal.Content>

@@ -35,7 +35,7 @@ export class ConfidenceCourageModalDialog extends Component {
   
   onListenAudio = (playSecond) => {
     let totalSecond = Math.round(playSecond);
-    const minute = totalSecond / 60 < 10 ? `0${parseInt(totalSecond / 60)}` : parseInt(totalSecond / 60);
+    const minute = totalSecond / 60 < 10 ? `0${parseInt(totalSecond / 60, 10)}` : parseInt(totalSecond / 60, 10);
     const second = totalSecond % 60 < 10 ? `0${totalSecond % 60}` : totalSecond % 60;
     const displayTime = `${minute} : ${second}`;
     this.setState({ displayTime });
@@ -43,10 +43,11 @@ export class ConfidenceCourageModalDialog extends Component {
   
   renderLeftContent = () => {
     const { displayTime } = this.state;
+    const { description, subTitle, leftTitle, audioTitle } = this.props;
     return (
       <div className="left-content">
         <div className="courage-left-title">
-          Listen to the audio
+          {audioTitle}
         </div>
         <div className="courage-listen-content">
           <div
@@ -60,18 +61,12 @@ export class ConfidenceCourageModalDialog extends Component {
           </div>
         </div>
         <div className="courage-left-title">
-          Read the transcript
+          {leftTitle}
         </div>
         <div className="courage-left-description">
-          Welcome to your new mindset class!
+          {subTitle}
           <div className="courage-left-sub-description">
-            {'The LASIK surgeon uses computer software to guide the IntraLase laser beam, ' +
-            'which applies a series of tiny (3-micron-diameter) bubbles within the central layer' +
-            'of the cornea. The resulting cornea flap is created at a precise depth and diameter ' +
-            'pre-determined by the surgeon. As occurs with a mechanical microkeratome, a small ' +
-            'section of tissue at one edge of the flap is left uncut, forming a hinge that allows' +
-            ' the surgeon to fold back the flap so that the cornea can be accessed and reshaped' +
-            ' for vison'}
+            {description}
           </div>
         </div>
       </div>
@@ -79,14 +74,15 @@ export class ConfidenceCourageModalDialog extends Component {
   };
   
   renderRightContent = () => {
+    const { inputTitle, inputPlaceholder } = this.props;
     return (
       <div className="right-content">
         <div className="save-journal-modal-right-title">
-          Lifestyle Challenge - Confidence
+          {inputTitle}
         </div>
         <Form className="form-textarea">
           <TextArea
-            placeholder="What did this Mindset Activity bring to mind?"
+            placeholder={inputPlaceholder}
             className="addlifestyle-textarea courage-textarea"
             onChange={this.onChange}
           />
@@ -97,18 +93,19 @@ export class ConfidenceCourageModalDialog extends Component {
   
   render() {
     const { open } = this.state;
+    const { title, buttonName } = this.props;
     return (
       <Modal dimmer="blurring" open={open} onClose={this.onClose} className="modal-dialog save-modal">
         <Modal.Content className="modal-content save-modal-content">
           <div className="modal-title save-modal">
-            Confidence - Courage
+            {title}
           </div>
           <div className="save-modal-main-content confidence">
             {this.renderLeftContent()}
             {this.renderRightContent()}
           </div>
           <Button className="save-button" circular={true} onClick={this.onContinueClick}>
-            Continue
+            {buttonName}
           </Button>
         </Modal.Content>
         <Button className="modal-close-button" onClick={this.onClose}>
