@@ -64,7 +64,8 @@ body {
   height: 100%;
   background-color: #f8f8f8;
   width: 200px;
-  text-align: center; }
+  text-align: center;
+  display: none; }
   .side-navigation-bar .username {
     margin-top: 0px;
     color: #26BCB9; }

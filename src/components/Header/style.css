@@ -66,7 +66,8 @@ body {
   justify-content: space-between;
   display: flex;
   padding-left: 1.5em;
-  padding-right: 1.5em; }
+  padding-right: 1.5em;
+  display: none; }
 
 .header-title {
   text-align: left;

@@ -52,20 +52,24 @@ export class GetStarted extends Component {
   render() {
     return (
       <div className="get-started">
-        <h4 className="get-started-title">
-          Mindset
-        </h4>
-        <div className="ui padded two column grid content">
-          {this.renderLeftContent()}
-          <div className="right-content column">
-            <h4 className="right-title">
-              Here's How it works
+        <div className="center-wrapper">
+          <div className="center-content">
+            <h4 className="get-started-title">
+              Mindset
             </h4>
-            {this.renderRightContent()}
+            <div className="ui padded two column grid content">
+              {this.renderLeftContent()}
+              <div className="right-content column">
+                <h4 className="right-title">
+                  Here's How it works
+                </h4>
+                {this.renderRightContent()}
+              </div>
+            </div>
+            <div className="bottom-content">
+              <CustomButton name="Get Started" className="btn-get-started" onClick={this.onGetStarted}/>
+            </div>
           </div>
-        </div>
-        <div className="bottom-content">
-          <CustomButton name="Get Started" className="btn-get-started" onClick={this.onGetStarted}/>
         </div>
       </div>
     );
