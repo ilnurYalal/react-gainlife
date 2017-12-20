@@ -113,7 +113,9 @@ body {
   border-style: solid !important;
   min-height: 96px !important;
   display: flex !important;
-  position: relative; }
+  position: relative;
+  opacity: 1 !important;
+  cursor: default !important; }
   .lifestyle-complete-row-button .check-icon {
     width: 50px;
     height: 50px; }
