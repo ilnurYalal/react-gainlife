@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Modal, Button, Image, Form, TextArea } from 'semantic-ui-react';
+import ReactAudioPlayer from 'react-audio-player';
+import Mp3 from './../../assets/cartoon.mp3';
 import CloseIcon from './../../assets/icon_close@2x.png';
 import PlayIcon from './../../assets/icon_play@2x.png';
 import './style.css';
@@ -8,8 +10,10 @@ export class ConfidenceCourageModalDialog extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: true
-    }
+      open: true,
+      displayTime: '00:00'
+    };
+    this.player = null;
   }
   
   onClose = () => {
@@ -25,7 +29,20 @@ export class ConfidenceCourageModalDialog extends Component {
     this.props.onContinue();
   };
   
+  playAudio = () => {
+    this.player.audioEl.play();
+  };
+  
+  onListenAudio = (playSecond) => {
+    let totalSecond = Math.round(playSecond);
+    const minute = totalSecond / 60 < 10 ? `0${parseInt(totalSecond / 60)}` : parseInt(totalSecond / 60);
+    const second = totalSecond % 60 < 10 ? `0${totalSecond % 60}` : totalSecond % 60;
+    const displayTime = `${minute} : ${second}`;
+    this.setState({ displayTime });
+  };
+  
   renderLeftContent = () => {
+    const { displayTime } = this.state;
     return (
       <div className="left-content">
         <div className="courage-left-title">
@@ -35,10 +52,10 @@ export class ConfidenceCourageModalDialog extends Component {
           <div
             className="courage-listen-button"
             style={{ backgroundImage: `url(${PlayIcon})` }}
-            onClick={() => alert('click')}
+            onClick={this.playAudio}
           >
             <div className="courage-listen-label">
-              00 : 00
+              {displayTime}
             </div>
           </div>
         </div>
@@ -97,6 +114,12 @@ export class ConfidenceCourageModalDialog extends Component {
         <Button className="modal-close-button" onClick={this.onClose}>
           <Image src={CloseIcon} className="modal-close-image" />
         </Button>
+        <ReactAudioPlayer
+          src={Mp3}
+          ref={(element) => { this.player = element; }}
+          onListen={this.onListenAudio}
+          listenInterval={1000}
+        />
       </Modal>
     )
   }
