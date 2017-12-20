@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      index: 0
+      index: 1
     }
   }
   updatePage = (index) => {

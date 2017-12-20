@@ -107,9 +107,9 @@ export class Mindset extends Component {
               Completed
             </div>
             <div className="mindset-incomplete-main-content">
-              <MindsetTabRow completed={true} />
-              <MindsetTabRow completed={true} />
-              <MindsetTabRow completed={true} />
+              <MindsetTabRow completed={true} onClick={() => this.onClickModal(1)} />
+              <MindsetTabRow completed={true} onClick={() => this.onClickModal(1)} />
+              <MindsetTabRow completed={true} onClick={() => this.onClickModal(1)} />
             </div>
           </div>
         </div>
