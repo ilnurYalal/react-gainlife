@@ -21,20 +21,20 @@ export class MindsetTabRow extends Component {
   render() {
     const { isShowCheckIcon } = this.state;
     return (
-      <div className="mindset-incompleted-row">
+      <Button className="mindset-incompleted-row" onClick={this.onClick} >
         <div className="mindest-incompleted-row-title">
           Confidence - Courage
         </div>
         <div className="mindest-incompleted-row-description">
           Introduction to this activity intro copy is here intro copy is here intro copy is here intro copy is here
         </div>
-        <Button onClick={this.onClick} className="mindset-incompleted-button">
+        <div className="mindset-incompleted-button">
           <div className="mindset-incompleted-row-background">
             <Image src={MindsetActivityIcon} className="mindset-incompleted-row-icon"/>
           </div>
-        </Button>
+        </div>
         {isShowCheckIcon && <Image src={CheckIcon} className="mindset-row-check-icon"/>}
-      </div>
+      </Button>
     );
   }
 }

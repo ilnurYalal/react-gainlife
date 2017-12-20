@@ -62,16 +62,18 @@ body {
 
 .mindset-incompleted-row {
   height: 200px;
-  margin-bottom: 30px;
-  background: #26BCB9;
+  margin-bottom: 30px !important;
+  background: #26BCB9 !important;
   width: 47%;
-  margin-right: 3%;
-  display: inline-block;
-  border-radius: 3px;
+  margin-right: 3% !important;
+  float: left;
+  border-radius: 3px !important;
   position: relative;
   overflow: hidden;
+  text-align: left !important;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5) !important;
-  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5) !important; }
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5) !important;
+  padding: 0 !important; }
   .mindset-incompleted-row .mindest-incompleted-row-title {
     font-size: 1.5em;
     font-family: roboto;
