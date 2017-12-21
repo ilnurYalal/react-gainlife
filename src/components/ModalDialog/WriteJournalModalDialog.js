@@ -3,7 +3,7 @@ import { Image, Modal, Button } from 'semantic-ui-react';
 import { CustomModalButton } from './../../components/CustomButton';
 import ModalCheckIcon from './../../assets/icon_modal-check@2x.png';
 import CloseIcon from './../../assets/icon_close@2x.png';
-import './style.scss';
+import './style.css';
 
 
 export class WriteJournalModalDialog extends Component {

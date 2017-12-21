@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Image, Modal, Button } from 'semantic-ui-react';
 import CloseIcon from './../../assets/icon_close_white@2x.png';
 import BackImg from './../../assets/img_background1.png';
-import './style.scss';
+import './style.css';
 
 export class LifestyleConfidenceModalDialog extends Component {
   constructor(props) {

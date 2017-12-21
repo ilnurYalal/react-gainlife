@@ -3,7 +3,7 @@ import { Image, Modal, Button } from 'semantic-ui-react';
 import { CustomModalButton } from './../../components/CustomButton';
 import ThumbIcon from './../../assets/icon_thumb@2x.png';
 import CloseIcon from './../../assets/icon_close@2x.png';
-import './style.scss';
+import './style.css';
 
 export class ShareModalDialog extends Component {
   constructor(props) {
