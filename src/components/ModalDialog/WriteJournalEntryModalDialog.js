@@ -55,8 +55,8 @@ export class WriteJournalEntryModalDialog extends Component {
     this.setState({ isShowPlaceImage: true, image: CameraIcon });
   };
   
-  onChange = (description) => {
-    this.setState({ description });
+  onChange = (e) => {
+    this.setState({ description: e.target.value });
   };
   
   renderLeftContent = () => {

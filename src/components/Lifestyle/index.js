@@ -13,6 +13,7 @@ import {
   ShareModalDialog
 } from './../ModalDialog';
 import UserIcon from './../../assets/icon_user_gray@2x.png';
+import BackImg from './../../assets/img_background1.png';
 import { AddLifestyleDialog } from './../AddLifestyleDialog';
 import {
   WRITE_JOURNAL,
@@ -91,6 +92,7 @@ export class Lifestyle extends Component {
             <LifestyleCompleteRowButton
               description={row}
               key={`key-${index}`}
+              onClick={() => this.onClickModal(4)}
             />
           )}
         </div>
@@ -136,6 +138,25 @@ export class Lifestyle extends Component {
           title={SHARE.title}
           description={SHARE.description}
           buttonName={SHARE.buttonName}
+        />
+      );
+    } else if (showModalStatus === 4) {
+      return (
+        <SaveJournalModalDialog
+          onSave={() => this.onClickModal(0)}
+          onClose={() => this.onClickModal(0)}
+          onShare={() => this.onClickModal(3)}
+          onSkip={() => alert('skip')}
+          title={SAVE_JOURNAL_ENTRY.title}
+          rightTitle={SAVE_JOURNAL_ENTRY.rightTitle}
+          rightDescription={SAVE_JOURNAL_ENTRY.rightDescription}
+          firstButtonName={SAVE_JOURNAL_ENTRY.firstButtonName}
+          secondButtonName={SAVE_JOURNAL_ENTRY.secondButtonName}
+          thirdButtonName={SAVE_JOURNAL_ENTRY.thirdButtonName}
+          fourthButtonName={SAVE_JOURNAL_ENTRY.fourthButtonName}
+          inputPlaceholder={SAVE_JOURNAL_ENTRY.inputPlaceholder}
+          image={BackImg}
+          description={SAVE_JOURNAL_ENTRY.description}
         />
       );
     }

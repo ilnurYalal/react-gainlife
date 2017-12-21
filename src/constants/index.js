@@ -79,7 +79,14 @@ export const SAVE_JOURNAL_ENTRY = {
   secondButtonName: 'Skip journal for now',
   thirdButtonName: 'Share',
   fourthButtonName: 'Upload Picture',
-  inputPlaceholder: 'How did it go?'
+  inputPlaceholder: 'How did it go?',
+  description: 'The LASIK surgeon uses computer software to guide the IntraLase laser beam, ' +
+  'which applies a series of tiny (3-micron-diameter) bubbles within the central layer' +
+  'of the cornea. The resulting cornea flap is created at a precise depth and diameter ' +
+  'pre-determined by the surgeon. As occurs with a mechanical microkeratome, a small ' +
+  'section of tissue at one edge of the flap is left uncut, forming a hinge that allows' +
+  ' the surgeon to fold back the flap so that the cornea can be accessed and reshaped' +
+  ' for vison',
 };
 
 export const SHARE = {

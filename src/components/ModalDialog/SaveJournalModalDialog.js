@@ -12,8 +12,9 @@ export class SaveJournalModalDialog extends Component {
     this.state = {
       open: true,
       dimmer: 'blurring',
-      image: CameraIcon,
-      isShowPlaceImage: true
+      image: props.image ? props.image : CameraIcon,
+      isShowPlaceImage: !props.image,
+      description: props.description ? props.description : ''
     }
   }
   
@@ -52,6 +53,10 @@ export class SaveJournalModalDialog extends Component {
   
   onRemoveImg = () => {
     this.setState({ isShowPlaceImage: true, image: CameraIcon });
+  };
+  
+  onChange = (e) => {
+    this.setState({ description: e.target.value });
   };
   
   renderLeftContent = () => {
@@ -93,6 +98,7 @@ export class SaveJournalModalDialog extends Component {
   
   renderRightContent = () => {
     const { inputPlaceholder, rightDescription, rightTitle } = this.props;
+    const { description } = this.state;
     return (
       <div className="right-content">
         <div className="save-journal-modal-right-title">
@@ -106,6 +112,7 @@ export class SaveJournalModalDialog extends Component {
             placeholder={inputPlaceholder}
             className="addlifestyle-textarea"
             onChange={this.onChange}
+            value={description}
           />
         </Form>
       </div>
