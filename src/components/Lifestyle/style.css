@@ -1,3 +1,7 @@
+h5.light {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  font-size: 1rem; }
 .lifestyle-container {
   flex: 1;
   margin-left: 20px;
