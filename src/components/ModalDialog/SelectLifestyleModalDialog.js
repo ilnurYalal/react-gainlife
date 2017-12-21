@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Modal, Button } from 'semantic-ui-react';
+import { Image, Modal, Button, TextArea } from 'semantic-ui-react';
 import CloseIcon from './../../assets/icon_close@2x.png';
 import BackImgLeft from './../../assets/img_background.jpg';
 import BackImgRight from './../../assets/img_background1.png';
@@ -11,8 +11,10 @@ export class SelectLifestyleModalDialog extends Component {
     this.state = {
       open: true,
       dimmer: 'blurring',
-      selctedIndex: -1
-    }
+      selctedIndex: -1,
+      rightLabel: props.rightLabel ? props.rightLabel : ''
+    };
+    this.textArea = null;
   }
   
   onClose = () => {
@@ -22,15 +24,22 @@ export class SelectLifestyleModalDialog extends Component {
   
   onClick = (selctedIndex) => {
     this.setState({ selctedIndex });
+    if (selctedIndex === 1) {
+      this.textArea.focus();
+    }
   };
   
   onContinueClick = () => {
     this.props.onContinue();
   };
   
+  onChangeRightLabel = (e) => {
+    this.setState({ rightLabel: e.target.value });
+  };
+  
   renderMainContent = () => {
-    const { selctedIndex } = this.state;
-    const { leftLabel, rightLabel } = this.props;
+    const { selctedIndex, rightLabel } = this.state;
+    const { leftLabel } = this.props;
     return (
       <div className="select-modal-main-content">
         <div
@@ -47,9 +56,13 @@ export class SelectLifestyleModalDialog extends Component {
           style={{ backgroundImage: `url(${BackImgRight})` }}
           onClick={() => this.onClick(1)}
         >
-          <div>
-            {rightLabel}
-          </div>
+          <TextArea
+            className="select-modal-text-area"
+            autoHeight={true}
+            value={rightLabel}
+            onChange={this.onChangeRightLabel}
+            ref={(ref) => { this.textArea = ref; }}
+          />
           <div className="select-modal-right-bottom-border" />
         </div>
       </div>

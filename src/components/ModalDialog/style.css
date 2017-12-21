@@ -170,7 +170,16 @@
         border-bottom-style: solid; }
   .select-modal-main-content .select-modal-border {
     border-color: #26BCB9 !important; }
-
+.select-modal-text-area{
+  background: no-repeat;
+  color: white;
+  width: 100%;
+  resize: none;
+  border: none !important;
+  min-height: 60px;
+  height: max-content !important;
+  font-family: roboto;
+}
 ::-webkit-input-placeholder {
   font-style: italic; }
 
