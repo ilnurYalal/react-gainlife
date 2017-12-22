@@ -48,7 +48,7 @@
         display: inline-block;
         margin-top: 45px; }
   .mindset-incompleted-row .mindset-row-check-icon {
-    position: absolute;
+    position: absolute !important;
     bottom: 15px;
     right: 20px;
     width: 40px; }
