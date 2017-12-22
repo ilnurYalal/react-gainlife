@@ -4,6 +4,7 @@ import ReactAudioPlayer from 'react-audio-player';
 import Mp3 from './../../assets/cartoon.mp3';
 import CloseIcon from './../../assets/icon_close@2x.png';
 import PlayIcon from './../../assets/icon_play@2x.png';
+import PauseIcon from './../../assets/icon_pause@2x.png';
 import './style.css';
 
 export class ConfidenceCourageModalDialog extends Component {
@@ -11,7 +12,8 @@ export class ConfidenceCourageModalDialog extends Component {
     super(props);
     this.state = {
       open: true,
-      displayTime: '00:00'
+      displayTime: '00:00',
+      audioPlayStatus: 0 // 0: initial, 1: play, 2: pause
     };
     this.player = null;
   }
@@ -30,7 +32,18 @@ export class ConfidenceCourageModalDialog extends Component {
   };
   
   playAudio = () => {
-    this.player.audioEl.play();
+    const { audioPlayStatus } = this.state;
+    console.info(this.player.audioEl);
+    if (audioPlayStatus === 0) {
+      this.player.audioEl.play();
+      this.setState({ audioPlayStatus: 1 })
+    } else if (audioPlayStatus === 1) {
+      this.player.audioEl.pause();
+      this.setState({ audioPlayStatus: 2 })
+    } else if (audioPlayStatus === 2) {
+      this.player.audioEl.play();
+      this.setState({ audioPlayStatus: 1 })
+    }
   };
   
   onListenAudio = (playSecond) => {
@@ -42,8 +55,9 @@ export class ConfidenceCourageModalDialog extends Component {
   };
   
   renderLeftContent = () => {
-    const { displayTime } = this.state;
+    const { displayTime, audioPlayStatus } = this.state;
     const { description, subTitle, leftTitle, audioTitle } = this.props;
+    const mediaIcon = audioPlayStatus === 1 ? `url(${PauseIcon})` : `url(${PlayIcon})`;
     return (
       <div className="left-content">
         <div className="courage-left-title">
@@ -52,7 +66,7 @@ export class ConfidenceCourageModalDialog extends Component {
         <div className="courage-listen-content">
           <div
             className="courage-listen-button"
-            style={{ backgroundImage: `url(${PlayIcon})` }}
+            style={{ backgroundImage: mediaIcon }}
             onClick={this.playAudio}
           >
             <div className="courage-listen-label">
