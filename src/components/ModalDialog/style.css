@@ -264,6 +264,8 @@
   font-weight: 100; }
 
 .courage-left-sub-description {
+  overflow: auto;
+  height: 210px;
   margin-top: 12px; }
 
 .courage-listen-content {

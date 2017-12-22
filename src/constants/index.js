@@ -27,7 +27,11 @@ export const CONFIDENCE_COURAGE = {
     'pre-determined by the surgeon. As occurs with a mechanical microkeratome, a small ' +
     'section of tissue at one edge of the flap is left uncut, forming a hinge that allows' +
     ' the surgeon to fold back the flap so that the cornea can be accessed and reshaped' +
-    ' for vison',
+    ' for vison The LASIK surgeon uses computer software to guide the IntraLase laser beam, ' +
+  'The LASIK surgeon uses computer software to guide the IntraLase laser beam, ' +
+  'The LASIK surgeon uses computer software to guide the IntraLase laser beam, ' +
+  'The LASIK surgeon uses computer software to guide the IntraLase laser beam, ' +
+  'The LASIK surgeon uses computer software to guide the IntraLase laser beam,',
   inputPlaceholder: 'What did this Mindset Activity bring to mind?',
   inputTitle: 'Mindset Activity - Courage',
   buttonName: 'Continue',
