@@ -54,7 +54,7 @@ export const SELECT_LIFESTYLE = {
 
 export const LIFESTYLE_CONFIDENCE = {
   title: 'Confidence',
-  description: 'Make it to the top of the mountain on the weekend hike.',
+  description: 'Try a high-intensity gym class',
   buttonName: 'Commit'
 };
 

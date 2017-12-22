@@ -30,7 +30,12 @@ export class SelectLifestyleModalDialog extends Component {
   };
   
   onContinueClick = () => {
-    this.props.onContinue();
+    const { rightLabel, selctedIndex } = this.state;
+    if (selctedIndex === 1) {
+      this.props.onContinue(rightLabel);
+    } else if (selctedIndex === 0) {
+      this.props.onContinue(null);
+    }
   };
   
   onChangeRightLabel = (e) => {

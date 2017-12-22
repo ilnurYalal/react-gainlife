@@ -18,12 +18,17 @@ export class Mindset extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModalStatus: 0 // 1: Confidence Modal, 2: Nice Job Modal, 3: Lifestyle Challenge Modal, 4: Confidence Modal
+      showModalStatus: 0, // 1: Confidence Modal, 2: Nice Job Modal, 3: Lifestyle Challenge Modal, 4: Confidence Modal,
+      lifestyleGoal: null
     };
   }
   
-  onClickModal = (nextModalStatus) => {
-    this.setState({ showModalStatus: nextModalStatus });
+  onClickModal = (nextModalStatus, lifestyleGoal = '') => {
+    if (nextModalStatus === 4) {
+      this.setState({ lifestyleGoal, showModalStatus: nextModalStatus });
+    } else {
+      this.setState({ showModalStatus: nextModalStatus });
+    }
   };
   
   renderHeader = () => {
@@ -56,7 +61,7 @@ export class Mindset extends Component {
   };
   
   renderModal = () => {
-    const { showModalStatus } = this.state;
+    const { showModalStatus, lifestyleGoal } = this.state;
     switch (showModalStatus) {
       case 1:
         return (
@@ -85,7 +90,7 @@ export class Mindset extends Component {
       case 3:
         return (
           <SelectLifestyleModalDialog
-            onContinue={() => this.onClickModal(4)}
+            onContinue={(lifestyleGoal) => this.onClickModal(4, lifestyleGoal)}
             onClose={() => this.onClickModal(0)}
             title={SELECT_LIFESTYLE.title}
             description={SELECT_LIFESTYLE.description}
@@ -100,7 +105,7 @@ export class Mindset extends Component {
             onCommit={() => this.onClickModal(0)}
             onClose={() => this.onClickModal(0)}
             title={LIFESTYLE_CONFIDENCE.title}
-            description={LIFESTYLE_CONFIDENCE.description}
+            description={lifestyleGoal ? lifestyleGoal : LIFESTYLE_CONFIDENCE.description}
             buttonName={LIFESTYLE_CONFIDENCE.buttonName}
           />
         );
