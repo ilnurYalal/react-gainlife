@@ -5,6 +5,9 @@ button {
 .get-started {
   flex: 1; }
   .get-started .get-started-title {
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 2em;
     color: #26BCB9;
     margin-bottom: 40px !important; }
 
@@ -46,6 +49,9 @@ button {
 .right-content {
   padding: 0 !important; }
   .right-content .right-title {
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 2em;
     margin-top: 20px;
     color: #26BCB9;
     margin-bottom: 0; }
