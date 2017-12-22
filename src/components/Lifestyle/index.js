@@ -62,7 +62,7 @@ export class Lifestyle extends Component {
       <div>
         <Image src={UserIcon} className="no-content-image"/>
         <br />
-        <h5 className="no-content-description light">
+        <h5 className="no-content-description">
           No current Lifestyle Challenges. Visit Mindset Activity to unlock weekly challenges.
         </h5>
       </div>

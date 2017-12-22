@@ -1,7 +1,3 @@
-h5.light {
-  font-family: 'Roboto';
-  font-weight: lighter;
-  font-size: 1rem; }
 .lifestyle-container {
   flex: 1;
   margin-left: 20px;
@@ -63,6 +59,9 @@ h5.light {
   margin-bottom: 40px; }
 
 .no-content-description {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  font-size: 1rem;
   display: inline-block;
   width: 300px;
   margin-top: 0;

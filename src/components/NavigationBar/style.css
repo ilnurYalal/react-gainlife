@@ -1,7 +1,3 @@
-h4 {
-  font-family: 'Roboto';
-  font-weight: bold;
-  font-size: 2em; }
 .side-navigation-bar {
   height: 100%;
   background-color: #f8f8f8;
@@ -9,6 +5,9 @@ h4 {
   text-align: center;
   display: none; }
   .side-navigation-bar .username {
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 2em;
     margin-top: 0px;
     color: #26BCB9; }
 

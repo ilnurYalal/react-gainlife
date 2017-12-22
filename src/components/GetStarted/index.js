@@ -16,7 +16,7 @@ export class GetStarted extends Component {
   
   renderLeftContent = () => {
     return (
-      <div className="left-content column">
+      <div className="get-started-left-content column">
         <Image src={UserIcon} className="left-content-img"/>
         <h4 className="content-title">
           Welcome to
