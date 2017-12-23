@@ -8,7 +8,12 @@ export class AddLifestyleDialog extends Component {
     this.state = {
       isDisabledBtn: true,
       lifestyleDescription: ''
-    }
+    };
+    this.textArea = null;
+  }
+  
+  componentDidMount() {
+    this.textArea.focus();
   }
   
   onChange = (event, data) => {
@@ -39,6 +44,7 @@ export class AddLifestyleDialog extends Component {
             rows={2}
             className="addlifestyle-textarea"
             onChange={this.onChange}
+            ref={(ref) => this.textArea = ref}
           />
         </Form>
         <Button circular={true} className="addlifestyle-btn" disabled={isDisabledBtn} onClick={this.onClick}>
