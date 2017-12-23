@@ -143,6 +143,7 @@
   margin-top: 30px;
   margin-bottom: 10px; }
   .select-modal-main-content .select-modal-left-content {
+    cursor: pointer;
     flex: 1;
     margin-right: 10px;
     background-size: cover;

@@ -75,6 +75,7 @@ export class SelectLifestyleModalDialog extends Component {
   };
   
   renderContent = () => {
+    const { selctedIndex } = this.state;
     const { title, description, buttonName } = this.props;
     return (
       <Modal.Content className="modal-content save-modal-content">
@@ -85,7 +86,12 @@ export class SelectLifestyleModalDialog extends Component {
           {description}
         </div>
         {this.renderMainContent()}
-        <Button className="save-button" circular={true} onClick={this.onContinueClick}>
+        <Button
+          className="save-button"
+          circular={true}
+          onClick={this.onContinueClick}
+          disabled={selctedIndex === 0 || selctedIndex === -1}
+        >
           {buttonName}
         </Button>
       </Modal.Content>

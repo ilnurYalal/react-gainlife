@@ -69,9 +69,8 @@ export class Journal extends Component {
   renderJournal = () => {
     return (
       <div className="journal-tab-main-content">
-        <JournalRow
-          onClick={this.onRowClick}
-        />
+        <JournalRow onClick={this.onRowClick} />
+        <JournalRow onClick={this.onRowClick} />
       </div>
     );
   };
